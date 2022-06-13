@@ -13,55 +13,51 @@ using namespace std;
 
 int main()
 
-{   
-
-
+{
     Font font;
     font.loadFromFile("arial.ttf");//zaladowanie czcionki
 
-  
-
     RenderWindow windowStart{ VideoMode(600,800),"Start" };//renderowamie okno dla start
-    Enter enter(windowStart.getSize().x, windowStart.getSize().y);//obiekt menu dla start
-    RectangleShape entertlo;//tło dla startu
-    entertlo.setSize(Vector2f(600, 800));
-    Texture enterstart;
-    enterstart.loadFromFile("start.jpg");
-    entertlo.setTexture(&enterstart);
+    Enter menuStart(windowStart.getSize().x, windowStart.getSize().y);//obiekt menu dla start
+    RectangleShape backStart;//tło dla startu
+    backStart.setSize(Vector2f(600, 800));
+    Texture imageBackStart;
+    imageBackStart.loadFromFile("start.jpg");
+    backStart.setTexture(&imageBackStart);
     
     while (windowStart.isOpen()) //okno start otworzenie
     {
-        Text tekst("cpp0x.pl",font,12);
-        tekst.setFillColor(Color::Black);
-        tekst.setPosition(70.f, 600.f);
+        Text warninng("cpp0x.pl",font,12);
+        warninng.setFillColor(Color::Black);
+        warninng.setPosition(70.f, 600.f);
 
-        Event evententer;
-        while (windowStart.pollEvent(evententer))
+        Event eventStart;
+        while (windowStart.pollEvent(eventStart))
         {
-            if (evententer.type == Event::Closed)//zamkniecie okna start
+            if (eventStart.type == Event::Closed)//zamkniecie okna start
             {
                 windowStart.close();
             }
-            if (evententer.type == Event::KeyReleased)
+            if (eventStart.type == Event::KeyReleased)
             {
-                if (evententer.key.code == Keyboard::Up)// strowanie strzałka w góre
+                if (eventStart.key.code == Keyboard::Up)// strowanie strzałka w góre
                 {
-                    enter.MoveUp();
+                    menuStart.MoveUp();
                     break;
                 }
-                if (evententer.key.code == Keyboard::Down)//sterowanie strzałka w dół
+                if (eventStart.key.code == Keyboard::Down)//sterowanie strzałka w dół
                 {
-                    enter.MoveDown();
+                    menuStart.MoveDown();
                     break;
                 }
 
-                if (evententer.key.code == Keyboard::Return)
+                if (eventStart.key.code == Keyboard::Return)
                 {
-                    int x = enter.GetPressedItem();
+                    int x = menuStart.GetPressedItem();
                 if (x == 0)//wybór start w oknie start
                 {
-                    RenderWindow Mainmenu{ VideoMode(600,800),"MainMenu" };//renderowanie okna dla main menu
-                    Menu menu(Mainmenu.getSize().x, Mainmenu.getSize().y);//obiekt dla main menu
+                    RenderWindow mainMenu{ VideoMode(600,800),"MainMenu" };//renderowanie okna dla main menu
+                    Menu menu(mainMenu.getSize().x, mainMenu.getSize().y);//obiekt dla main menu
                     menu.nazwa("Sandwishes", 0);
                     menu.nazwa("Shakes", 1);
                     menu.nazwa("Sides", 2);
@@ -69,56 +65,56 @@ int main()
                     menu.nazwa("Bill", 4);
                     menu.nazwa("Exit", 5);
 
-                    RectangleShape tlostart;//tło dla main menu
-                    tlostart.setSize(Vector2f(600, 800));
-                    Texture start;
-                    start.loadFromFile("Menu.png");
-                    tlostart.setTexture(&start);
+                    RectangleShape backMainMenu;//tło dla main menu
+                    backMainMenu.setSize(Vector2f(600, 800));
+                    Texture imageBackMainMenu;
+                    imageBackMainMenu.loadFromFile("Menu.png");
+                    backMainMenu.setTexture(&imageBackMainMenu);
                     windowStart.close();
 
 
-                    while (Mainmenu.isOpen())//otwracie okna dla main menu
+                    while (mainMenu.isOpen())//otwracie okna dla main menu
                     {
-                        Event event;
-                        while (Mainmenu.pollEvent(event))
+                        Event eventMainMenu;
+                        while (mainMenu.pollEvent(eventMainMenu))
                         {
-                            if (event.type == Event::Closed)//zamkniecie okna main menu
+                            if (eventMainMenu.type == Event::Closed)//zamkniecie okna main menu
                             {
-                                Mainmenu.close();
+                                mainMenu.close();
                             }
-                            if (event.type == Event::KeyReleased)
+                            if (eventMainMenu.type == Event::KeyReleased)
                             {
-                                if (event.key.code==Keyboard::Up)//sterowanie w góre
+                                if (eventMainMenu.key.code==Keyboard::Up)//sterowanie w góre
                                 {
                                     menu.MoveUp();
                                     
                                 }
-                                if (event.key.code==Keyboard::Down)//sterowanie w dół
+                                if (eventMainMenu.key.code==Keyboard::Down)//sterowanie w dół
                                 {
                                     menu.MoveDown();
                                     
                                 }
-                                if (event.key.code == Keyboard::Return)
+                                if (eventMainMenu.key.code == Keyboard::Return)
                                 {
                                     int x = menu.GetPressedItem();
 
-                                    RenderWindow Kanapki(VideoMode(600, 800), "Sandwich"); //renderowanie okna dla kanapek
-                                    Menu menukanapki(Kanapki.getSize().x, Kanapki.getSize().y);//obiekt dla kanapek
-                                    menukanapki.nazwa("Beef", 0);//przypisanie nazw dla menu kanapki
-                                    menukanapki.nazwa("Chicken", 1);
-                                    menukanapki.nazwa("Tost with ham", 2);
-                                    menukanapki.nazwa("Tost with tuna", 3);
-                                    menukanapki.nazwa("Creator Sandwich", 4);
-                                    menukanapki.nazwa("Exit", 5);
+                                    RenderWindow sandwich(VideoMode(600, 800), "Sandwich"); //renderowanie okna dla kanapek
+                                    Menu menuSandwich(sandwich.getSize().x, sandwich.getSize().y);//obiekt dla kanapek
+                                    menuSandwich.nazwa("Beef", 0);//przypisanie nazw dla menu kanapki
+                                    menuSandwich.nazwa("Chicken", 1);
+                                    menuSandwich.nazwa("Tost with ham", 2);
+                                    menuSandwich.nazwa("Tost with tuna", 3);
+                                    menuSandwich.nazwa("Creator Sandwich", 4);
+                                    menuSandwich.nazwa("Exit", 5);
 
-                                    RectangleShape background;//tlo dla kanapek
-                                    background.setSize(Vector2f(600, 800));
-                                    Texture obrazek;
-                                    obrazek.loadFromFile("kanapki.png");
-                                    background.setTexture(&obrazek);
+                                    RectangleShape backSandwich;//tlo dla kanapek
+                                    backSandwich.setSize(Vector2f(600, 800));
+                                    Texture imageBackSandwich;
+                                    imageBackSandwich.loadFromFile("kanapki.png");
+                                    backSandwich.setTexture(&imageBackSandwich);
 
-                                    RenderWindow Shakes(VideoMode(600, 800), "Shakes");// -||- dla shakes
-                                    Menu menuShakes(Shakes.getSize().x, Shakes.getSize().y);//obiekt dla shakes
+                                    RenderWindow shakes(VideoMode(600, 800), "Shakes");// -||- dla shakes
+                                    Menu menuShakes(shakes.getSize().x, shakes.getSize().y);//obiekt dla shakes
                                     menuShakes.nazwa("Strawberry", 0);//przypisanie nazw dla menu shakes
                                     menuShakes.nazwa("Vanilla", 1);
                                     menuShakes.nazwa("Chocolate", 2);
@@ -170,33 +166,33 @@ int main()
                               
                                     if (x == 0)// opcja kanapki
                                     {
-                                        while (Kanapki.isOpen())
+                                        while (sandwich.isOpen())
                                         {
                                             Event avent;
-                                            while (Kanapki.pollEvent(avent))
+                                            while (sandwich.pollEvent(avent))
                                             {
                                                 if (avent.type == Event::Closed)
                                                 {
-                                                    Kanapki.close();
+                                                    sandwich.close();
                                                 }
                                                 if (avent.type == Event::KeyReleased)
                                                 {
                                                     if (avent.key.code == Keyboard::Up)
                                                     {
-                                                        menukanapki.MoveUp();
+                                                        menuSandwich.MoveUp();
                                                         break;
                                                     }
                                                     if (avent.key.code == Keyboard::Down)
                                                     {
-                                                        menukanapki.MoveDown();
+                                                        menuSandwich.MoveDown();
                                                         break;
 
                                                     }
-                                                    if (event.key.code == Keyboard::Return)
+                                                    if (eventMainMenu.key.code == Keyboard::Return)
                                                     {
                                                      
 
-                                                        int x = menukanapki.GetPressedItem();
+                                                        int x = menuSandwich.GetPressedItem();
                                                         //wybór kanapek w menu
                                                         if (x == 0) 
                                                         {
@@ -295,7 +291,7 @@ int main()
                                                         }
                                                         if (x == 5)//zamkniecie okna kanapki
                                                         {
-                                                            Kanapki.close();
+                                                            sandwich.close();
                                                             break;
                                                         }
 
@@ -308,34 +304,34 @@ int main()
                                                 }
                                                 
                                             }
-                                            Shakes.close();//zamykanie okien innych niż menu kanapek
+                                            shakes.close();//zamykanie okien innych niż menu kanapek
                                             Sides.close();
                                             Meals.close();
                                             Bill.close();
 
-                                            Kanapki.clear();
-                                            Kanapki.draw(background);
-                                            menukanapki.draw(Kanapki);
-                                            Kanapki.display();
+                                            sandwich.clear();
+                                            sandwich.draw(backSandwich);
+                                            menuSandwich.draw(sandwich);
+                                            sandwich.display();
                                         }
                                     }
                                     if (x == 1)
                                     {
-                                        while (Shakes.isOpen())
+                                        while (shakes.isOpen())
                                         {
                                             Event eventshakes;
 
-                                            while (Shakes.pollEvent(eventshakes))
+                                            while (shakes.pollEvent(eventshakes))
                                             {
                                                 if (eventshakes.type == Event::Closed)
                                                 {
-                                                    Shakes.close();
+                                                    shakes.close();
                                                 }
                                                 if (eventshakes.type == Event::KeyPressed)
                                                 {
                                                     if (eventshakes.key.code == Keyboard::Escape)
                                                     {
-                                                        Shakes.close();
+                                                        shakes.close();
                                                     }
                                                 }
 
@@ -374,7 +370,7 @@ int main()
                                                         }
                                                         if (x == 5)
                                                         {
-                                                            Shakes.close();
+                                                            shakes.close();
                                                             break;
                                                         }
                                                     }
@@ -383,15 +379,15 @@ int main()
 
 
                                             }
-                                            Kanapki.close();                            
+                                            sandwich.close();                            
                                             Sides.close();
                                             Meals.close();
                                             Bill.close();
 
-                                            Shakes.clear();
-                                            Shakes.draw(tloshakes);
-                                            menuShakes.draw(Shakes);
-                                            Shakes.display();
+                                            shakes.clear();
+                                            shakes.draw(tloshakes);
+                                            menuShakes.draw(shakes);
+                                            shakes.display();
                                         }
                                     }
 
@@ -459,8 +455,8 @@ int main()
 
 
                                             }
-                                            Kanapki.close();
-                                            Shakes.close();
+                                            sandwich.close();
+                                            shakes.close();
                                             Meals.close();
                                             Bill.close();
 
@@ -615,9 +611,9 @@ int main()
                                                 }
 
                                             }
-                                            Shakes.close();
+                                            shakes.close();
                                             Sides.close();
-                                            Kanapki.close();
+                                            sandwich.close();
                                             Bill.close();
 
                                             Meals.clear();
@@ -677,7 +673,7 @@ int main()
                                                        
                                                         if (x == 0)//opcja zaplac
                                                         {
-                                                            Mainmenu.close();
+                                                            mainMenu.close();
                                                             Bill.close();
                                                             while (Numerorder.isOpen())
                                                             {
@@ -738,10 +734,10 @@ int main()
 
 
                                             }
-                                            Kanapki.close();
+                                            sandwich.close();
                                             Sides.close();
                                             Meals.close();
-                                            Shakes.close();
+                                            shakes.close();
 
                                             Bill.clear();
                                             Bill.draw(tlorachunek);
@@ -753,7 +749,7 @@ int main()
 
                                     if (x == 5)//zamyka okno menu- guzik exit
                                     {
-                                        Mainmenu.close();
+                                        mainMenu.close();
                                         
                                         break;
                                     }
@@ -761,10 +757,10 @@ int main()
 
                                 }
                             }
-                            Mainmenu.clear();
-                            Mainmenu.draw(tlostart);
-                            menu.draw(Mainmenu);
-                            Mainmenu.display();
+                            mainMenu.clear();
+                            mainMenu.draw(backMainMenu);
+                            menu.draw(mainMenu);
+                            mainMenu.display();
                         }
                     }
 
@@ -781,9 +777,9 @@ int main()
         }
      
             windowStart.clear();//czyszczenie okna
-            windowStart.draw(entertlo);//wyswietalnie tła dla enter
-            windowStart.draw(tekst);//wyswietlanie tekstu
-            enter.draw(windowStart);
+            windowStart.draw(backStart);//wyswietalnie tła dla enter
+            windowStart.draw(warninng);//wyswietlanie tekstu
+            menuStart.draw(windowStart);
             windowStart.display();
     }
         
