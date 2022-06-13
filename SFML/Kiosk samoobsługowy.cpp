@@ -27,15 +27,15 @@ int main()
     
     while (windowStart.isOpen()) //okno start otworzenie
     {
-        Text warninng1("Note: The maximum number of products in an order is 8, products above",font,12);
+        Text warninng1(" Note: The maximum number of products in an order is 8, products above",font,14);
         warninng1.setFillColor(Color::Black);
-        warninng1.setPosition(100.f, 630.f);
-        Text warninng2(" this quantity are not added to the basket. To check the status of the", font, 12);
+        warninng1.setPosition(63.f, 630.f);
+        Text warninng2(" this quantity are not added to the basket. To check the status of the", font, 14);
         warninng2.setFillColor(Color::Black);
-        warninng2.setPosition(100.f, 640.f);
-        Text warninng3(" basket or remove products from it, go to the -Bill- tab. ", font, 12);
+        warninng2.setPosition(63.f, 644.f);
+        Text warninng3(" basket or remove products from it, go to the -Bill- tab. ", font, 14);
         warninng3.setFillColor(Color::Black);
-        warninng3.setPosition(100.f, 650.f);
+        warninng3.setPosition(63.f, 658.f);
 
 
         Event eventStart;
