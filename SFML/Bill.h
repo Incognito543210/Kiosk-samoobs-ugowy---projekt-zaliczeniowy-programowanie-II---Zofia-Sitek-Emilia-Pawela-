@@ -7,7 +7,7 @@
 using namespace std;
 using namespace sf;
 
-class Rachunek
+class classBill
 {
 private:
 	int selectedItemIndex;
@@ -15,8 +15,8 @@ private:
 	Text enter[MAX_NUMBER_OF_ITEMS];
 public:
 
-	Rachunek(float width, float height);
-	~Rachunek();
+	classBill(float width, float height);
+	~classBill();
 	void MoveLeft();
 	void MoveRight();
 

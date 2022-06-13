@@ -145,17 +145,25 @@
   <ItemGroup>
     <ClCompile Include="DeletingOrder.cpp" />
     <ClCompile Include="Enter.cpp" />
+    <ClCompile Include="mealsOption.cpp" />
+    <ClCompile Include="shakesOption.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Ordernumerclass.cpp" />
-    <ClCompile Include="Rachunek.cpp" />
+    <ClCompile Include="Bill.cpp" />
     <ClCompile Include="Kiosk samoobsługowy.cpp" />
+    <ClCompile Include="sandwichOption.cpp" />
+    <ClCompile Include="sidesOption.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DeletingOrder.h" />
     <ClInclude Include="Enter.h" />
+    <ClInclude Include="mealsOption.h" />
+    <ClInclude Include="sidesOption.h" />
+    <ClInclude Include="shakesOption.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="sandwichOption.h" />
     <ClInclude Include="Ordernumerclass.h" />
-    <ClInclude Include="Rachunek.h" />
+    <ClInclude Include="Bill.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

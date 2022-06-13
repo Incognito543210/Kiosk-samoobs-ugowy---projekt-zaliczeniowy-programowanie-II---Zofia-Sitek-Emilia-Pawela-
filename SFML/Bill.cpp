@@ -1,6 +1,6 @@
-#include "Rachunek.h"
+#include "Bill.h"
 //klasa dla menu przy wybraniu opcji bill
-Rachunek::Rachunek(float width, float height)
+classBill::classBill(float width, float height)
 {
 	if (!font.loadFromFile("arial.ttf"))
 	{
@@ -28,10 +28,10 @@ Rachunek::Rachunek(float width, float height)
 
 
 
-Rachunek::~Rachunek()
+classBill::~classBill()
 {};
 
-void Rachunek::draw(RenderWindow& window)
+void classBill::draw(RenderWindow& window)
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -39,7 +39,7 @@ void Rachunek::draw(RenderWindow& window)
 
 	}
 }
-void Rachunek::MoveLeft()
+void classBill::MoveLeft()
 {
 	if (selectedItemIndex - 1 >= 0)
 	{
@@ -48,7 +48,7 @@ void Rachunek::MoveLeft()
 		enter[selectedItemIndex].setFillColor(Color::Red);
 	}
 }
-void Rachunek::MoveRight()
+void classBill::MoveRight()
 {
 	if (selectedItemIndex + 1 < MAX_NUMBER_OF_ITEMS)
 	{

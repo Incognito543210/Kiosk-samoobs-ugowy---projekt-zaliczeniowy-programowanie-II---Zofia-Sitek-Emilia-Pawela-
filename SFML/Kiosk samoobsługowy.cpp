@@ -5,10 +5,16 @@
 #include "Enter.h"
 #include "Ordernumerclass.h"
 #include "DeletingOrder.h"
-#include "Rachunek.h"
+#include "Bill.h"
+#include "sandwichOption.h"
+#include "sidesOption.h"
+#include "shakesOption.h"
+#include "mealsOption.h"
+
 
 using namespace sf;
 using namespace std;
+
 
 //funkcja main
 
@@ -106,49 +112,10 @@ int main()
                                 {
                                     int x = menuMainMenu.GetPressedItem();
 
-                                    RenderWindow windowSandwich(VideoMode(600, 800), "Sandwich"); //renderowanie okna dla kanapek
-                                    Menu menuSandwich(windowSandwich.getSize().x, windowSandwich.getSize().y);//obiekt dla kanapek
-                                    menuSandwich.nazwa("Beef burger", 0);//przypisanie nazw dla menu kanapki
-                                    menuSandwich.nazwa("Chicken burger", 1);
-                                    menuSandwich.nazwa("Ham&cheese sandwich", 2);
-                                    menuSandwich.nazwa("Tuna sandwich", 3);
-                                    menuSandwich.nazwa("Sandwich creator", 4);
-                                    menuSandwich.nazwa("Exit", 5);
+                                   
+                                   
 
-                                    RectangleShape backSandwich;//tlo dla kanapek
-                                    backSandwich.setSize(Vector2f(600, 800));
-                                    Texture imageBackSandwich;
-                                    imageBackSandwich.loadFromFile("kanapki.png");
-                                    backSandwich.setTexture(&imageBackSandwich);
-
-                                    RenderWindow windowShakes(VideoMode(600, 800), "Shakes");// -||- dla shakes
-                                    Menu menuShakes(windowShakes.getSize().x, windowShakes.getSize().y);//obiekt dla shakes
-                                    menuShakes.nazwa("Strawberry", 0);//przypisanie nazw dla menu shakes
-                                    menuShakes.nazwa("Vanilla", 1);
-                                    menuShakes.nazwa("Chocolate", 2);
-                                    menuShakes.nazwa("Caramel", 3);
-                                    menuShakes.nazwa("Blueberry", 4);
-                                    menuShakes.nazwa("Exit", 5);
-                                    RectangleShape backShakes;//tlo dla shakes
-                                    backShakes.setSize(Vector2f(600, 800));
-                                    Texture imageBackShakes;
-                                    imageBackShakes.loadFromFile("shakes.png");
-                                    backShakes.setTexture(&imageBackShakes);
-
-                                    RenderWindow windowSides(VideoMode(600, 800), "Sides");// -||- dla Sides
-                                    Menu menuSides(windowSides.getSize().x, windowSides.getSize().y);//obiekt dla sides
-                                    menuSides.nazwa("Chips", 0);//przypisanie nazw dla menu sides
-                                    menuSides.nazwa("Salad", 1);
-                                    menuSides.nazwa("Ketchup", 2);
-                                    menuSides.nazwa("KentuckyGold dip", 3);
-                                    menuSides.nazwa("Garlic dip", 4);
-                                    menuSides.nazwa("Exit", 5);
-                                    RectangleShape backSides;//tlo dla sides
-                                    backSides.setSize(Vector2f(600, 800));
-                                    Texture imageBackSides;
-                                    imageBackSides.loadFromFile("dodatki.png");
-                                    backSides.setTexture(&imageBackSides);
-
+                                    
                                     RenderWindow windowMeals(VideoMode(600, 800), "Meals");// -||- dla MEals
                                     Menu menuMeals(windowMeals.getSize().x, windowMeals.getSize().y);//obiekt dla Meals
                                     menuMeals.nazwa("Beef+Chips+Blueberry", 0);//przypisanie nazw dla menu Meals
@@ -164,7 +131,7 @@ int main()
                                     backMeals.setTexture(&imageBackMeals);
 
                                     RenderWindow windowBill(VideoMode(600, 800), "Bill");// -||- dla rachunku
-                                    Rachunek menuBill(windowBill.getSize().x, windowBill.getSize().y);//obiekt dla rachunku
+                                    classBill menuBill(windowBill.getSize().x, windowBill.getSize().y);//obiekt dla rachunku
                                     RectangleShape backBill;//tło dla srachunku
                                     backBill.setSize(Vector2f(600, 800));
                                     Texture imageBackBill;
@@ -174,461 +141,22 @@ int main()
                               
                                     if (x == 0)// opcja kanapki
                                     {
-                                        while (windowSandwich.isOpen())
-                                        {
-                                            Event sandwichEvent;
-                                            while (windowSandwich.pollEvent(sandwichEvent))
-                                            {
-                                                if (sandwichEvent.type == Event::Closed)
-                                                {
-                                                    windowSandwich.close();
-                                                }
-                                                if (sandwichEvent.type == Event::KeyReleased)
-                                                {
-                                                    if (sandwichEvent.key.code == Keyboard::Up)
-                                                    {
-                                                        menuSandwich.MoveUp();
-                                                        break;
-                                                    }
-                                                    if (sandwichEvent.key.code == Keyboard::Down)
-                                                    {
-                                                        menuSandwich.MoveDown();
-                                                        break;
-
-                                                    }
-                                                    if (eventMainMenu.key.code == Keyboard::Return)
-                                                    {
-                                                     
-
-                                                        int x = menuSandwich.GetPressedItem();
-                                                        //wybór kanapek w menu
-                                                        if (x == 0) 
-                                                        {
-                                                           
-                                                           
-                                                        }
-
-                                                        if (x == 1)
-                                                        {
-                                                          
-                                                        }
-                                                        if(x==2)
-                                                        {
-                                                           
-                                                        }
-                                                        if(x==3)
-                                                        {
-                                                           
-                                                        }
-                                                   
-                                                        if(x==4)//kreator kanapki
-                                                        {
-
-                                                            RenderWindow windowCreatorSandwich(VideoMode(600, 800), "SandwichCreator");//okno dla kreatora kanapki
-                                                            Menu menuCreatorSandwich(windowCreatorSandwich.getSize().x, windowCreatorSandwich.getSize().y);//obiekt menau dla kreatora kanapki
-                                                            menuCreatorSandwich.nazwa("Beef", 0);
-                                                            menuCreatorSandwich.nazwa("Ham", 1);
-                                                            menuCreatorSandwich.nazwa("Cheese", 2);
-                                                            menuCreatorSandwich.nazwa("Tuna", 3);
-                                                            menuCreatorSandwich.nazwa("Lettuce", 4);
-                                                            menuCreatorSandwich.nazwa("Exit", 5);
-                                                            RectangleShape backCreatorSandwich;//tło dla kreatora kanapki
-                                                            backCreatorSandwich.setSize(Vector2f(600, 800));
-                                                            Texture imageBackCreatorSandwich;
-                                                            imageBackCreatorSandwich.loadFromFile("kreatorwybur kanapki.png");
-                                                            backCreatorSandwich.setTexture(&imageBackCreatorSandwich);
-                                                            while (windowCreatorSandwich.isOpen())
-                                                            {
-                                                                Event creatorSandwichEvent;
-                                                                while (windowCreatorSandwich.pollEvent(creatorSandwichEvent))
-                                                                {
-                                                                    if (creatorSandwichEvent.type == Event::Closed)
-                                                                    {
-                                                                        windowCreatorSandwich.close();
-                                                                    }
-                                                                    if (creatorSandwichEvent.type == Event::KeyPressed)
-                                                                    {
-                                                                        if (creatorSandwichEvent.key.code == Keyboard::Escape)
-                                                                        {
-                                                                            windowCreatorSandwich.close();
-                                                                        }
-                                                                    }
-                                                                    if (creatorSandwichEvent.type == Event::KeyReleased)
-                                                                    {
-                                                                        if (creatorSandwichEvent.key.code == Keyboard::Up)
-                                                                        {
-                                                                            menuCreatorSandwich.MoveUp();
-                                                                            break;
-                                                                        }
-                                                                        if (creatorSandwichEvent.key.code == Keyboard::Down)
-                                                                        {
-                                                                            menuCreatorSandwich.MoveDown();
-                                                                            break;
-                                                                        }
-                                                                        int x = menuCreatorSandwich.GetPressedItem();
-                                                                        if (creatorSandwichEvent.key.code == Keyboard::Return)
-                                                                        {//opcje dla kreatora kanapki
-                                                                            if(x==0)
-                                                                            { }
-                                                                            if(x==1)
-                                                                            { }
-                                                                            if (x == 3)
-                                                                            {
-                                                                            }
-                                                                            if (x == 4)
-                                                                            {
-                                                                            }
-                                                                            if (x == 5)
-                                                                            {
-                                                                                windowCreatorSandwich.close();
-                                                                                break;
-                                                                            }
-                                                                        }
-
-
-                                                                    }
-                                                                }
-                                                                windowCreatorSandwich.clear();//czyszczenie okna 
-                                                                windowCreatorSandwich.draw(backCreatorSandwich);//przypisanie tła dla okna
-                                                                menuCreatorSandwich.draw(windowCreatorSandwich);//przypisanie okna do obiketu menu
-                                                                windowCreatorSandwich.display();
-
-
-
-                                                            }
-                                                        }
-                                                        if (x == 5)//zamkniecie okna kanapki
-                                                        {
-                                                            windowSandwich.close();
-                                                            break;
-                                                        }
-
-                                                    }
-
-
-
-
-
-                                                }
-                                                
-                                            }
-                                            windowShakes.close();//zamykanie okien innych niż menu kanapek
-                                            windowSides.close();
-                                            windowMeals.close();
-                                            windowBill.close();
-
-                                            windowSandwich.clear();
-                                            windowSandwich.draw(backSandwich);
-                                            menuSandwich.draw(windowSandwich);
-                                            windowSandwich.display();
-                                        }
+                                        sandwitchOption();
                                     }
                                     if (x == 1)
                                     {
-                                        while (windowShakes.isOpen())
-                                        {
-                                            Event shakesEvent;
-
-                                            while (windowShakes.pollEvent(shakesEvent))
-                                            {
-                                                if (shakesEvent.type == Event::Closed)
-                                                {
-                                                    windowShakes.close();
-                                                }
-                                                if (shakesEvent.type == Event::KeyPressed)
-                                                {
-                                                    if (shakesEvent.key.code == Keyboard::Escape)
-                                                    {
-                                                        windowShakes.close();
-                                                    }
-                                                }
-
-                                                if (shakesEvent.type == Event::KeyReleased)
-                                                {
-                                                    if (shakesEvent.key.code == Keyboard::Up)
-                                                    {
-                                                        menuShakes.MoveUp();
-                                                        break;
-                                                    }
-                                                    if (shakesEvent.key.code == Keyboard::Down)
-                                                    {
-                                                        menuShakes.MoveDown();
-                                                        break;
-
-                                                    }
-
-                                                    if (shakesEvent.key.code == Keyboard::Return)
-                                                    {
-                                                        int x = menuShakes.GetPressedItem();
-
-                                                        //opcje dla menu shakes
-                                                        if(x==0)
-                                                        { }
-                                                        if (x == 1)
-                                                        {
-                                                        }
-                                                        if (x == 2)
-                                                        {
-                                                        }
-                                                        if (x == 3)
-                                                        {
-                                                        }
-                                                        if (x == 4)
-                                                        {
-                                                        }
-                                                        if (x == 5)
-                                                        {
-                                                            windowShakes.close();
-                                                            break;
-                                                        }
-                                                    }
-
-                                                }
-
-
-                                            }
-                                            windowSandwich.close();                            
-                                            windowSides.close();
-                                            windowMeals.close();
-                                            windowBill.close();
-
-                                            windowShakes.clear();
-                                            windowShakes.draw(backShakes);
-                                            menuShakes.draw(windowShakes);
-                                            windowShakes.display();
-                                        }
+                                        shakeOption();
                                     }
 
                                     if (x == 2)
                                     {
-                                        while (windowSides.isOpen())
-                                        {
-                                            Event sidesEvent;
-
-                                            while (windowSides.pollEvent(sidesEvent))
-                                            {
-                                                if (sidesEvent.type == Event::Closed)
-                                                {
-                                                    windowSides.close();
-                                                }
-                                                if (sidesEvent.type == Event::KeyPressed)
-                                                {
-                                                    if (sidesEvent.key.code == Keyboard::Escape)
-                                                    {
-                                                        windowSides.close();
-                                                    }
-                                                }
-
-                                                if (sidesEvent.type == Event::KeyReleased)
-                                                {
-                                                    if (sidesEvent.key.code == Keyboard::Up)
-                                                    {
-                                                        menuSides.MoveUp();
-                                                        break;
-                                                    }
-                                                    if (sidesEvent.key.code == Keyboard::Down)
-                                                    {
-                                                        menuSides.MoveDown();
-                                                        break;
-
-                                                    }
-
-                                                    if (sidesEvent.key.code == Keyboard::Return)
-                                                    {
-                                                        //opcje dla dodatkow
-                                                        int x = menuSides.GetPressedItem();
-                                                        if (x == 0)
-                                                        {
-                                                        }
-                                                        if (x == 1)
-                                                        {
-                                                        }
-                                                        if (x == 2)
-                                                        {
-                                                        }
-                                                        if (x == 3)
-                                                        {
-                                                        }
-                                                        if (x == 4)
-                                                        {
-                                                        }
-                                                        if (x == 5)
-                                                        {
-                                                            windowSides.close();
-                                                            break;
-                                                        }
-                                                    }
-
-                                                }
-
-
-                                            }
-                                            windowSandwich.close();
-                                            windowShakes.close();
-                                            windowMeals.close();
-                                            windowBill.close();
-
-                                            windowSides.clear();
-                                            windowSides.draw(backSides);
-                                            menuSides.draw(windowSides);
-                                            windowSides.display();
-                                        }
+                                        sidesOption();
+                                        
                                     }//opcja dodatki
 
                                     if(x==3)//opcja zestwy
                                     { 
-                                        while (windowMeals.isOpen())
-                                        {
-                                            Event mealsEvent;
-                                            while (windowMeals.pollEvent(mealsEvent))
-                                            {
-                                                if (mealsEvent.type == Event::Closed)
-                                                {
-                                                    windowMeals.close();
-                                                }
-                                                if (mealsEvent.type == Event::KeyReleased)
-                                                {
-                                                    if (mealsEvent.key.code == Keyboard::Up)
-                                                    {
-                                                        menuMeals.MoveUp();
-                                                        break;
-                                                    }
-                                                    if (mealsEvent.key.code == Keyboard::Down)
-                                                    {
-                                                        menuMeals.MoveDown();
-                                                        break;
-
-                                                    }
-                                                    if (mealsEvent.key.code == Keyboard::Return)
-                                                    {
-
-
-                                                        int x = menuMeals.GetPressedItem();
-
-                                                       //opcje dla zestawow
-                                                        if (x == 0)
-                                                        {
-
-
-                                                        }
-
-                                                        if (x == 1)
-                                                        {
-
-                                                        }
-                                                        if (x == 2)
-                                                        {
-
-                                                        }
-                                                        if (x == 3)
-                                                        {
-
-                                                        }
-
-                                                        if (x == 4)
-                                                        {
-
-                                                            RenderWindow windowCreatorMeals(VideoMode(600, 800), "MealCreator");//okno dla kreatora Meals
-                                                            Menu menuCreatorMeals(windowCreatorMeals.getSize().x, windowCreatorMeals.getSize().y);//obiekt menau dla kreatora melas
-                                                            menuCreatorMeals.nazwa("Beff burger", 0);
-                                                            menuCreatorMeals.nazwa("Ham&cheese sandwich", 1);
-                                                            menuCreatorMeals.nazwa("Chips", 2);
-                                                            menuCreatorMeals.nazwa("Salad", 3);
-                                                            menuCreatorMeals.nazwa("Garlic dip", 4);
-                                                            menuCreatorMeals.nazwa("Exit", 5);
-                                                            RectangleShape backCreatorMeals;//tło dla kreatora kanapki
-                                                            backCreatorMeals.setSize(Vector2f(600, 800));
-                                                            Texture imageBackCreatorMeals;
-                                                            imageBackCreatorMeals.loadFromFile("mealcreator.png");
-                                                            backCreatorMeals.setTexture(&imageBackCreatorMeals);
-                                                            while (windowCreatorMeals.isOpen())
-                                                            {
-                                                                Event creatorMealsEvent;
-                                                                while (windowCreatorMeals.pollEvent(creatorMealsEvent))
-                                                                {
-                                                                    if (creatorMealsEvent.type == Event::Closed)
-                                                                    {
-                                                                        windowCreatorMeals.close();
-                                                                    }
-                                                                    if (creatorMealsEvent.type == Event::KeyPressed)
-                                                                    {
-                                                                        if (creatorMealsEvent.key.code == Keyboard::Escape)
-                                                                        {
-                                                                            windowCreatorMeals.close();
-                                                                        }
-                                                                    }
-                                                                    if (creatorMealsEvent.type == Event::KeyReleased)
-                                                                    {
-                                                                        if (creatorMealsEvent.key.code == Keyboard::Up)
-                                                                        {
-                                                                            menuCreatorMeals.MoveUp();
-                                                                            break;
-                                                                        }
-                                                                        if (creatorMealsEvent.key.code == Keyboard::Down)
-                                                                        {
-                                                                            menuCreatorMeals.MoveDown();
-                                                                            break;
-                                                                        }
-                                                                        int x = menuCreatorMeals.GetPressedItem();
-                                                                        if (creatorMealsEvent.key.code == Keyboard::Return)
-                                                                        {
-                                                                            //opcje dla kreatora zestawow
-                                                                            if (x == 0)
-                                                                            {
-                                                                            }
-                                                                            if (x == 1)
-                                                                            {
-                                                                            }
-                                                                            if (x == 3)
-                                                                            {
-                                                                            }
-                                                                            if (x == 4)
-                                                                            {
-                                                                            }
-                                                                            if (x == 5)
-                                                                            {
-                                                                                windowCreatorMeals.close();
-                                                                                break;
-                                                                            }
-                                                                        }
-
-
-                                                                    }
-                                                                }
-                                                                windowCreatorMeals.clear();
-                                                                windowCreatorMeals.draw(backCreatorMeals);
-                                                                menuCreatorMeals.draw(windowCreatorMeals);
-                                                                windowCreatorMeals.display();
-
-
-
-                                                            }
-                                                        }
-                                                        if (x == 5)//zamkniecie okna meals
-                                                        {
-                                                            windowMeals.close();
-                                                            break;
-                                                        }
-
-                                                    }
-
-
-
-
-
-                                                }
-
-                                            }
-                                            windowShakes.close();
-                                            windowSides.close();
-                                            windowSandwich.close();
-                                            windowBill.close();
-
-                                            windowMeals.clear();
-                                            windowMeals .draw(backMeals);
-                                            menuMeals.draw(windowMeals);
-                                            windowMeals.display();
-                                        }
+                                       mealsOption();
                                     
                                     
                                     }
@@ -847,10 +375,8 @@ int main()
 
 
                                             }
-                                            windowSandwich.close();
-                                            windowSides.close();
-                                            windowMeals.close();
-                                            windowShakes.close();
+                               
+                                    
 
                                             windowBill.clear();
                                             windowBill.draw(backBill);
