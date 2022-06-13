@@ -12,42 +12,42 @@ DeletingOrder::DeletingOrder(float width, float height)
 	menu[0].setFont(font);
 	menu[0].setFillColor(Color::Red);
 	menu[0].setString("Product number: 1");
-	menu[0].setPosition(64.f, 240.f);
+	menu[0].setPosition(64.f, 190.f);
 
 	menu[1].setFont(font);
 	menu[1].setFillColor(Color::Black);
 	menu[1].setString("Product number: 2");
-	menu[1].setPosition(64.f, 270.f);
+	menu[1].setPosition(64.f, 240.f);
 
 	menu[2].setFont(font);
 	menu[2].setFillColor(Color::Black);
 	menu[2].setString("Product number: 3");
-	menu[2].setPosition(64.f, 300.f);
+	menu[2].setPosition(64.f, 290.f);
 
 	menu[3].setFont(font);
 	menu[3].setFillColor(Color::Black);
 	menu[3].setString("Product number: 4");
-	menu[3].setPosition(64.f, 330.f);
+	menu[3].setPosition(64.f, 340.f);
 
 	menu[4].setFont(font);
 	menu[4].setFillColor(Color::Black);
 	menu[4].setString("Product number: 5");
-	menu[4].setPosition(64.f, 360.f);
+	menu[4].setPosition(64.f, 390.f);
 
 	menu[5].setFont(font);
 	menu[5].setFillColor(Color::Black);
 	menu[5].setString("Product number: 6");
-	menu[5].setPosition(64.f, 390.f);
+	menu[5].setPosition(64.f, 440.f);
 
 	menu[6].setFont(font);
 	menu[6].setFillColor(Color::Black);
 	menu[6].setString("Product number: 7");
-	menu[6].setPosition(64.f, 420.f);
+	menu[6].setPosition(64.f, 490.f);
 
 	menu[7].setFont(font);
 	menu[7].setFillColor(Color::Black);
 	menu[7].setString("Product number: 8");
-	menu[7].setPosition(64.f, 450.f);
+	menu[7].setPosition(64.f, 540.f);
 
 	menu[8].setFont(font);
 	menu[8].setFillColor(Color::Black);

@@ -762,6 +762,17 @@ int main()
                                                                     if (deletingOrderEvent.type == Event::KeyReleased)
                                                                     {
 
+                                                                        if (deletingOrderEvent.key.code == Keyboard::Up)
+                                                                        {
+                                                                            menuDeletingOrder.MoveUp();
+                                                                            break;
+                                                                        }
+                                                                        if (deletingOrderEvent.key.code == Keyboard::Down)
+                                                                        {
+                                                                            menuDeletingOrder.MoveDown();
+                                                                            break;
+
+                                                                        }
 
                                                                         if (deletingOrderEvent.key.code == Keyboard::Return)
                                                                         {
