@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="DeletingOrder.cpp" />
     <ClCompile Include="Enter.cpp" />
+    <ClCompile Include="ExitSure.cpp" />
     <ClCompile Include="mealsOption.cpp" />
     <ClCompile Include="shakesOption.cpp" />
     <ClCompile Include="Menu.cpp" />
@@ -158,6 +159,7 @@
   <ItemGroup>
     <ClInclude Include="DeletingOrder.h" />
     <ClInclude Include="Enter.h" />
+    <ClInclude Include="ExitSure.h" />
     <ClInclude Include="mealsOption.h" />
     <ClInclude Include="sidesOption.h" />
     <ClInclude Include="shakesOption.h" />

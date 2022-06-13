@@ -1,22 +1,20 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-//klasa dla menu przy wybraniu opcji bill
-
-#define MAX_NUMBER_OF_ITEMS 3
+#define MAX_NUMBER_OF_ITEMS 2
 using namespace std;
 using namespace sf;
 
-class classBill
+class ExitSure
 {
 private:
 	int selectedItemIndex;
 	Font font;
-	Text enter[MAX_NUMBER_OF_ITEMS];
+	Text menu[MAX_NUMBER_OF_ITEMS];
 public:
 
-	classBill(float width, float height);
-	~classBill();
+	ExitSure(float width, float height);
+	~ExitSure();
 	void MoveLeft();
 	void MoveRight();
 
@@ -24,3 +22,4 @@ public:
 	int GetPressedItem() { return selectedItemIndex; }
 
 };
+

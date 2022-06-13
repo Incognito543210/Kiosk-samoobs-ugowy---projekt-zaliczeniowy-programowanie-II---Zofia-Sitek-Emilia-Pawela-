@@ -11,7 +11,7 @@
 #include "shakesOption.h"
 #include "mealsOption.h"
 #include "StartANDMainMenu.h"
-
+#include "ExitSure.h"
 
 using namespace sf;
 using namespace std;
@@ -386,9 +386,80 @@ void startAndMainMenu()
 
                                         if (x == 5)//zamyka okno menu- guzik exit
                                         {
-                                            windowMainMenu.close();
 
-                                            break;
+                           
+                                            RenderWindow windowExitSure(VideoMode(600, 800), "ExitSure");// renederowanie okna dla upewnienia
+                                            ExitSure menuExitSure(windowExitSure.getSize().x, windowExitSure.getSize().y);//obiekt dla upewnienia
+                                            RectangleShape backExitSure;//t³o dla okna upewnienia
+                                            backExitSure.setSize(Vector2f(600, 800));
+                                            Texture imageBackExitSure;
+                                            imageBackExitSure.loadFromFile("baza2.png");
+                                            backExitSure.setTexture(&imageBackExitSure);
+
+                                            while (windowExitSure.isOpen())
+                                            {
+                                                Event exitSureEvent;
+                                                while (windowExitSure.pollEvent(exitSureEvent))
+                                                {
+                                                    if (exitSureEvent.type == Event::Closed)
+                                                    {
+                                                        windowExitSure.close();
+                                                    }
+                                                    if (exitSureEvent.type == Event::KeyPressed)
+                                                    {
+                                                        if (exitSureEvent.key.code == Keyboard::Escape)
+                                                        {
+                                                            windowExitSure.close();
+                                                        }
+                                                    }
+                                                    if (exitSureEvent.type == Event::KeyReleased)
+                                                    {
+
+                                                        if (exitSureEvent.key.code == Keyboard::Left)
+                                                        {
+                                                            menuExitSure.MoveLeft();
+                                                            break;
+                                                        }
+                                                        if (exitSureEvent.key.code == Keyboard::Right)
+                                                        {
+                                                            menuExitSure.MoveRight();
+                                                            break;
+
+                                                        }
+
+                                                        if (exitSureEvent.key.code == Keyboard::Return)
+                                                        {
+                                                            int x = menuExitSure.GetPressedItem();
+
+                                                            if (x == 0)
+                                                            {
+                                                                windowExitSure.close();
+                                                                windowMainMenu.close();
+                                                            }
+
+                                                            if (x == 1)
+                                                            {
+                                                               
+                                                                windowExitSure.close();
+ 
+                                                            }
+                                                         
+
+                                                        }
+
+
+                                                    }
+                                                }
+                                              
+                                                windowExitSure.clear();
+                                                windowExitSure.draw(backExitSure);
+                                                menuExitSure.draw(windowExitSure);
+                                                windowExitSure.display();
+
+
+
+                                            }
+                                          
                                         }
 
 

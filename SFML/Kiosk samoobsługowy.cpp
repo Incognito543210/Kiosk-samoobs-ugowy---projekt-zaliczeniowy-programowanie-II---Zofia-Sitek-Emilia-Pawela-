@@ -11,7 +11,7 @@
 #include "shakesOption.h"
 #include "mealsOption.h"
 #include "StartANDMainMenu.h"
-
+#include "ExitSure.h"
 
 using namespace sf;
 using namespace std;
