@@ -153,6 +153,7 @@
     <ClCompile Include="Kiosk samoobsługowy.cpp" />
     <ClCompile Include="sandwichOption.cpp" />
     <ClCompile Include="sidesOption.cpp" />
+    <ClCompile Include="StartANDMainMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DeletingOrder.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="sandwichOption.h" />
     <ClInclude Include="Ordernumerclass.h" />
     <ClInclude Include="Bill.h" />
+    <ClInclude Include="StartANDMainMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
