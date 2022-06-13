@@ -12,6 +12,7 @@ using namespace std;
 int main()
 
 {   
+    //zmiana
     Font font;
     font.loadFromFile("arial.ttf");//zaladowanie czcionki
 
