@@ -11,12 +11,14 @@ ExitSure::ExitSure(float width, float height)
 	menu[0].setFont(font);
 	menu[0].setFillColor(Color::Red);
 	menu[0].setString("Yes");
-	menu[0].setPosition(240.f, 750.f);
+	menu[0].setScale(2.f, 2.f);
+	menu[0].setPosition(180.f, 300.f);
 
 	menu[1].setFont(font);
 	menu[1].setFillColor(Color::Black);
+	menu[1].setScale(2.f, 2.f);
 	menu[1].setString("No");
-	menu[1].setPosition(340.f, 750.f);
+	menu[1].setPosition(340.f, 300.f);
 
 
 	selectedItemIndex = 0;
