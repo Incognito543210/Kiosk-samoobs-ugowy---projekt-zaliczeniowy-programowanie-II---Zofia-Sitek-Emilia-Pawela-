@@ -12,7 +12,7 @@ Enter::Enter(float width, float height)
 
 	enter[0].setFont(font);
 	enter[0].setFillColor(Color::Red);
-	enter[0].setString("Start");
+	enter[0].setString("ENTER");
 	enter[0].setPosition(260.f, 572.f);
 
 	enter[1].setFont(font);

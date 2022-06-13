@@ -27,9 +27,16 @@ int main()
     
     while (windowStart.isOpen()) //okno start otworzenie
     {
-        Text warninng("Note: The maximum number of products in an order is 8, products above this quantity are not added to the basket. To check the status of the basket or remove products from it, go to the -Bill- tab ",font,12);
-        warninng.setFillColor(Color::Black);
-        warninng.setPosition(70.f, 600.f);
+        Text warninng1("Note: The maximum number of products in an order is 8, products above",font,12);
+        warninng1.setFillColor(Color::Black);
+        warninng1.setPosition(100.f, 630.f);
+        Text warninng2(" this quantity are not added to the basket. To check the status of the", font, 12);
+        warninng2.setFillColor(Color::Black);
+        warninng2.setPosition(100.f, 640.f);
+        Text warninng3(" basket or remove products from it, go to the -Bill- tab. ", font, 12);
+        warninng3.setFillColor(Color::Black);
+        warninng3.setPosition(100.f, 650.f);
+
 
         Event eventStart;
         while (windowStart.pollEvent(eventStart))
@@ -778,7 +785,9 @@ int main()
      
             windowStart.clear();//czyszczenie okna
             windowStart.draw(backStart);//wyswietalnie tła dla enter
-            windowStart.draw(warninng);//wyswietlanie tekstu
+            windowStart.draw(warninng1);
+            windowStart.draw(warninng2);
+            windowStart.draw(warninng3);//wyswietlanie tekstu
             menuStart.draw(windowStart);
             windowStart.display();
     }
