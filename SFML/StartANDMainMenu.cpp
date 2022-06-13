@@ -110,24 +110,6 @@ void startAndMainMenu()
                                     {
                                         int x = menuMainMenu.GetPressedItem();
 
-
-
-
-
-                                        RenderWindow windowMeals(VideoMode(600, 800), "Meals");// -||- dla MEals
-                                        Menu menuMeals(windowMeals.getSize().x, windowMeals.getSize().y);//obiekt dla Meals
-                                        menuMeals.nazwa("Beef+Chips+Blueberry", 0);//przypisanie nazw dla menu Meals
-                                        menuMeals.nazwa("Ham&cheese+Chips+Strawberry", 1);
-                                        menuMeals.nazwa("Tuna+Salad+Chocolate", 2);
-                                        menuMeals.nazwa("Student Meal", 3);
-                                        menuMeals.nazwa("Create your meal", 4);
-                                        menuMeals.nazwa("Exit", 5);
-                                        RectangleShape backMeals;//tlo dla Meals
-                                        backMeals.setSize(Vector2f(600, 800));
-                                        Texture imageBackMeals;
-                                        imageBackMeals.loadFromFile("baza.png");
-                                        backMeals.setTexture(&imageBackMeals);
-
                                         RenderWindow windowBill(VideoMode(600, 800), "Bill");// -||- dla rachunku
                                         classBill menuBill(windowBill.getSize().x, windowBill.getSize().y);//obiekt dla rachunku
                                         RectangleShape backBill;//t³o dla srachunku

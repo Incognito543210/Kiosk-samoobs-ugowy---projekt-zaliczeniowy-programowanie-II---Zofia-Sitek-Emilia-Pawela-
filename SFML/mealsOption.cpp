@@ -16,7 +16,7 @@ void mealsOption()
     RenderWindow windowMeals(VideoMode(600, 800), "Meals");// -||- dla MEals
     Menu menuMeals(windowMeals.getSize().x, windowMeals.getSize().y);//obiekt dla Meals
     menuMeals.nazwa("Beef+Chips+Blueberry", 0);//przypisanie nazw dla menu Meals
-    menuMeals.nazwa("Ham&cheese+Chips+Strawberry", 1);
+    menuMeals.nazwa("Ham+Chips+Strawberry", 1);
     menuMeals.nazwa("Tuna+Salad+Chocolate", 2);
     menuMeals.nazwa("Student Meal", 3);
     menuMeals.nazwa("Create your meal", 4);
