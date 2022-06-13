@@ -9,6 +9,8 @@
 using namespace sf;
 using namespace std;
 
+//funkcja main
+
 int main()
 
 {   

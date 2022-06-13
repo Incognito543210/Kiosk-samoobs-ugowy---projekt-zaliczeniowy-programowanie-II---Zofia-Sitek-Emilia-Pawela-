@@ -1,5 +1,6 @@
 #include "Menu.h"
 
+//klasa dla menu, kanapek, shake itp oraz kreatorow
 
 Menu::Menu(float width, float height)
 {

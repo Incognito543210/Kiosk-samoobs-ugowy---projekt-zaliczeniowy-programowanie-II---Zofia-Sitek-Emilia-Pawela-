@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+//klasa dla menu dla okna startu
+
 #define MAX_NUMBER_OF_ITEMS 6
 using namespace std;
 using namespace sf;

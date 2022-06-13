@@ -4,7 +4,7 @@
 #define MAX_NUMBER_OF_ITEMS 6
 using namespace std;
 using namespace sf;
-
+//klasa dla menu przy numerze zamowienia
 class Ordernumerclass
 {
 private:

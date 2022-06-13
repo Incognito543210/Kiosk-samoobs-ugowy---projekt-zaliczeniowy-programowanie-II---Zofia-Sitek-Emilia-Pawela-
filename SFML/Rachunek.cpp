@@ -1,5 +1,5 @@
 #include "Rachunek.h"
-
+//klasa dla menu przy wybraniu opcji bill
 Rachunek::Rachunek(float width, float height)
 {
 	if (!font.loadFromFile("arial.ttf"))

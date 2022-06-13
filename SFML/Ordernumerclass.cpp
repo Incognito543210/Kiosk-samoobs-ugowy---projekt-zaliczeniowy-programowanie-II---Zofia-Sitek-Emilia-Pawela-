@@ -1,5 +1,5 @@
 #include "Ordernumerclass.h"
-
+//klasa dla menu przy numerze zamowienia
 Ordernumerclass::Ordernumerclass(float width, float height)
 {
 	if (!font.loadFromFile("arial.ttf"))

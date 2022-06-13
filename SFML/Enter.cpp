@@ -1,4 +1,7 @@
 #include "Enter.h"
+
+//klasa dla menu dla okna startu
+
 Enter::Enter(float width, float height)
 {
 	if (!font.loadFromFile("arial.ttf"))
