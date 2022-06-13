@@ -65,7 +65,7 @@ int main()
                 {
                     RenderWindow windowMainMenu{ VideoMode(600,800),"MainMenu" };//renderowanie okna dla main menu
                     Menu menuMainMenu(windowMainMenu.getSize().x, windowMainMenu.getSize().y);//obiekt dla main menu
-                    menuMainMenu.nazwa("Sandwishes", 0);
+                    menuMainMenu.nazwa("Sandwiches", 0);
                     menuMainMenu.nazwa("Shakes", 1);
                     menuMainMenu.nazwa("Sides", 2);
                     menuMainMenu.nazwa("Meals", 3);
