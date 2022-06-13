@@ -11,12 +11,17 @@ Rachunek::Rachunek(float width, float height)
 	enter[0].setFont(font);
 	enter[0].setFillColor(Color::Red);
 	enter[0].setString("Pay");
-	enter[0].setPosition(340.f, 750.f);
+	enter[0].setPosition(240.f, 750.f);
 
 	enter[1].setFont(font);
 	enter[1].setFillColor(Color::Black);
-	enter[1].setString("EXIT");
-	enter[1].setPosition(500.f, 750.f);
+	enter[1].setString("usun");
+	enter[1].setPosition(340.f, 750.f);
+
+	enter[2].setFont(font);
+	enter[2].setFillColor(Color::Black);
+	enter[2].setString("Exit");
+	enter[2].setPosition(500.f, 750.f);
 
 	selectedItemIndex = 0;
 }
@@ -28,7 +33,7 @@ Rachunek::~Rachunek()
 
 void Rachunek::draw(RenderWindow& window)
 {
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		window.draw(enter[i]);
 

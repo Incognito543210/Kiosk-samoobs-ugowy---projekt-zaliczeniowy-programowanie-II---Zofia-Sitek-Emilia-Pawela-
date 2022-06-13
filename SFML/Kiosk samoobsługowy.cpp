@@ -14,27 +14,33 @@ using namespace std;
 int main()
 
 {   
-    //zmiana
+
+
     Font font;
     font.loadFromFile("arial.ttf");//zaladowanie czcionki
 
+  
 
-    RenderWindow oknoenter{ VideoMode(600,800),"Start" };//renderowamie okno dla start
-    Enter enter(oknoenter.getSize().x, oknoenter.getSize().y);//obiekt menu dla start
+    RenderWindow windowStart{ VideoMode(600,800),"Start" };//renderowamie okno dla start
+    Enter enter(windowStart.getSize().x, windowStart.getSize().y);//obiekt menu dla start
     RectangleShape entertlo;//tło dla startu
     entertlo.setSize(Vector2f(600, 800));
     Texture enterstart;
     enterstart.loadFromFile("start.jpg");
     entertlo.setTexture(&enterstart);
     
-    while (oknoenter.isOpen()) //okno start 
+    while (windowStart.isOpen()) //okno start otworzenie
     {
+        Text tekst("cpp0x.pl",font,12);
+        tekst.setFillColor(Color::Black);
+        tekst.setPosition(70.f, 600.f);
+
         Event evententer;
-        while (oknoenter.pollEvent(evententer))
+        while (windowStart.pollEvent(evententer))
         {
             if (evententer.type == Event::Closed)//zamkniecie okna start
             {
-                oknoenter.close();
+                windowStart.close();
             }
             if (evententer.type == Event::KeyReleased)
             {
@@ -68,7 +74,7 @@ int main()
                     Texture start;
                     start.loadFromFile("Menu.png");
                     tlostart.setTexture(&start);
-                    oknoenter.close();
+                    windowStart.close();
 
 
                     while (Mainmenu.isOpen())//otwracie okna dla main menu
@@ -192,7 +198,7 @@ int main()
 
                                                         int x = menukanapki.GetPressedItem();
                                                         //wybór kanapek w menu
-                                                        if (x == 0)
+                                                        if (x == 0) 
                                                         {
                                                            
                                                            
@@ -668,7 +674,7 @@ int main()
                                                         tloorder.setTexture(&obrazorder);
 
                                                         int x = rachunek.GetPressedItem();
-
+                                                       
                                                         if (x == 0)//opcja zaplac
                                                         {
                                                             Mainmenu.close();
@@ -718,12 +724,14 @@ int main()
                                                             }
 
                                                         }
-                                                        if (x == 1)//opcja exit
+                                                        if (x == 1)
                                                         {
+                                                        }
+                                                        if(x==2)//opcja exit
+                                                        { 
                                                             Bill.close();
                                                             break;
                                                         }
-                                                      
                                                     }
 
                                                 }
@@ -764,7 +772,7 @@ int main()
                 }
                 if (x == 1)//exit dla okna startu
                 {
-                    oknoenter.close(); 
+                    windowStart.close(); 
                     break;
                 }
                 }
@@ -772,10 +780,11 @@ int main()
             }
         }
      
-            oknoenter.clear();
-            oknoenter.draw(entertlo);
-            enter.draw(oknoenter);
-            oknoenter.display();
+            windowStart.clear();//czyszczenie okna
+            windowStart.draw(entertlo);//wyswietalnie tła dla enter
+            windowStart.draw(tekst);//wyswietlanie tekstu
+            enter.draw(windowStart);
+            windowStart.display();
     }
         
     
