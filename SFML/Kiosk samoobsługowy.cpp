@@ -4,6 +4,7 @@
 #include "Menu.h"
 #include "Enter.h"
 #include "Ordernumerclass.h"
+#include "DeletingOrder.h"
 #include "Rachunek.h"
 
 using namespace sf;
@@ -668,13 +669,22 @@ int main()
 
                                                     if (billEvent.key.code == Keyboard::Return)
                                                     {
-                                                        RenderWindow windowNumerOrder(VideoMode(600, 800), "Numerorder");// renederowanie okna dla numeru zamowienia
+                                                        RenderWindow windowNumerOrder(VideoMode(600, 800), "NumerOrder");// renederowanie okna dla numeru zamowienia
                                                         Ordernumerclass menuNumerOrder(windowNumerOrder.getSize().x, windowNumerOrder.getSize().y);//obiekt dla menu numeru zamowienia
                                                         RectangleShape backNumerOrder;//tło dla okna numeru zamowienia
                                                         backNumerOrder.setSize(Vector2f(600, 800));
                                                         Texture imageBackNumerOrder;
                                                         imageBackNumerOrder.loadFromFile("bonapetit.png");
                                                         backNumerOrder.setTexture(&imageBackNumerOrder);
+
+                                                        windowBill.close();
+                                                        RenderWindow windowDeletingOrder(VideoMode(600, 800), "DeletingOrder");// renederowanie okna dla numeru zamowienia
+                                                        DeletingOrder menuDeletingOrder(windowDeletingOrder.getSize().x, windowDeletingOrder.getSize().y);//obiekt dla menu numeru zamowienia
+                                                        RectangleShape backDeletingOrder;//tło dla okna usówania zamówienia
+                                                        backDeletingOrder.setSize(Vector2f(600, 800));
+                                                        Texture imageBackDeletingOrder;
+                                                        imageBackDeletingOrder.loadFromFile("delate.png");
+                                                        backDeletingOrder.setTexture(&imageBackDeletingOrder);
 
                                                         int x = menuBill.GetPressedItem();
                                                        
@@ -716,7 +726,7 @@ int main()
 
                                                                     }
                                                                 }
-                                                               
+                                                                windowDeletingOrder.close();
                                                                 windowNumerOrder.clear();
                                                                 windowNumerOrder.draw(backNumerOrder);
                                                                 menuNumerOrder.draw(windowNumerOrder);
@@ -727,8 +737,93 @@ int main()
                                                             }
 
                                                         }
-                                                        if (x == 1)
+                                                        if (x == 1)//opcja usun
                                                         {
+                                                            windowBill.close();
+
+                                                          
+
+                                                            while (windowDeletingOrder.isOpen())
+                                                            {
+                                                                Event deletingOrderEvent;
+                                                                while (windowDeletingOrder.pollEvent(deletingOrderEvent))
+                                                                {
+                                                                    if (deletingOrderEvent.type == Event::Closed)
+                                                                    {
+                                                                        windowDeletingOrder.close();
+                                                                    }
+                                                                    if (deletingOrderEvent.type == Event::KeyPressed)
+                                                                    {
+                                                                        if (deletingOrderEvent.key.code == Keyboard::Escape)
+                                                                        {
+                                                                            windowDeletingOrder.close();
+                                                                        }
+                                                                    }
+                                                                    if (deletingOrderEvent.type == Event::KeyReleased)
+                                                                    {
+
+
+                                                                        if (deletingOrderEvent.key.code == Keyboard::Return)
+                                                                        {
+                                                                            int x = menuDeletingOrder.GetPressedItem();
+
+                                                                            if (x == 0 )
+                                                                            {
+
+                                                                            }
+                                                                            
+                                                                            if (x == 1)
+                                                                            {
+
+                                                                            }
+                                                                            if (x == 2)
+                                                                            {
+
+                                                                            }
+                                                                            if (x == 3)
+                                                                            {
+
+                                                                            }
+                                                                            if (x == 4)
+                                                                            {
+
+                                                                            }
+                                                                            if (x == 5 )
+                                                                            {
+
+                                                                            }
+
+
+                                                                            if (x == 6 )
+                                                                            {
+                                                                                
+                                                                            }
+                                                                            if (x == 7)
+                                                                            {
+                                                                                
+                                                                            }
+
+                                                                            if (x == 8)//opcja exit
+                                                                            {
+                                                                                windowDeletingOrder.close();
+                                                                                break;
+                                                                            }
+
+                                                                        }
+
+
+                                                                    }
+                                                                }
+                                                                windowNumerOrder.close();
+                                                                windowDeletingOrder.clear();
+                                                                windowDeletingOrder.draw(backDeletingOrder);
+                                                                menuDeletingOrder.draw(windowDeletingOrder);
+                                                                windowDeletingOrder.display();
+
+
+
+                                                            }
+
                                                         }
                                                         if(x==2)//opcja exit
                                                         { 
