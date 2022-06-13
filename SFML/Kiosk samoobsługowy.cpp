@@ -107,11 +107,11 @@ int main()
 
                                     RenderWindow windowSandwich(VideoMode(600, 800), "Sandwich"); //renderowanie okna dla kanapek
                                     Menu menuSandwich(windowSandwich.getSize().x, windowSandwich.getSize().y);//obiekt dla kanapek
-                                    menuSandwich.nazwa("Beef", 0);//przypisanie nazw dla menu kanapki
-                                    menuSandwich.nazwa("Chicken", 1);
-                                    menuSandwich.nazwa("Tost with ham", 2);
-                                    menuSandwich.nazwa("Tost with tuna", 3);
-                                    menuSandwich.nazwa("Creator Sandwich", 4);
+                                    menuSandwich.nazwa("Beef burger", 0);//przypisanie nazw dla menu kanapki
+                                    menuSandwich.nazwa("Chicken burger", 1);
+                                    menuSandwich.nazwa("Ham&cheese sandwich", 2);
+                                    menuSandwich.nazwa("Tuna sandwich", 3);
+                                    menuSandwich.nazwa("Sandwich creator", 4);
                                     menuSandwich.nazwa("Exit", 5);
 
                                     RectangleShape backSandwich;//tlo dla kanapek
@@ -125,8 +125,8 @@ int main()
                                     menuShakes.nazwa("Strawberry", 0);//przypisanie nazw dla menu shakes
                                     menuShakes.nazwa("Vanilla", 1);
                                     menuShakes.nazwa("Chocolate", 2);
-                                    menuShakes.nazwa("Carmel", 3);
-                                    menuShakes.nazwa("Berry", 4);
+                                    menuShakes.nazwa("Caramel", 3);
+                                    menuShakes.nazwa("Blueberry", 4);
                                     menuShakes.nazwa("Exit", 5);
                                     RectangleShape backShakes;//tlo dla shakes
                                     backShakes.setSize(Vector2f(600, 800));
@@ -139,8 +139,8 @@ int main()
                                     menuSides.nazwa("Chips", 0);//przypisanie nazw dla menu sides
                                     menuSides.nazwa("Salad", 1);
                                     menuSides.nazwa("Ketchup", 2);
-                                    menuSides.nazwa("KentackyGold", 3);
-                                    menuSides.nazwa("Garlic", 4);
+                                    menuSides.nazwa("KentuckyGold dip", 3);
+                                    menuSides.nazwa("Garlic dip", 4);
                                     menuSides.nazwa("Exit", 5);
                                     RectangleShape backSides;//tlo dla sides
                                     backSides.setSize(Vector2f(600, 800));
@@ -150,11 +150,11 @@ int main()
 
                                     RenderWindow windowMeals(VideoMode(600, 800), "Meals");// -||- dla MEals
                                     Menu menuMeals(windowMeals.getSize().x, windowMeals.getSize().y);//obiekt dla Meals
-                                    menuMeals.nazwa("Good Meal ", 0);//przypisanie nazw dla menu Meals
-                                    menuMeals.nazwa("Tost Ham Meal", 1);
-                                    menuMeals.nazwa("Tost Tuna Meal", 2);
-                                    menuMeals.nazwa("Studnet Meal", 3);
-                                    menuMeals.nazwa("Create your Meal", 4);
+                                    menuMeals.nazwa("Beef+Chips+Blueberry", 0);//przypisanie nazw dla menu Meals
+                                    menuMeals.nazwa("Ham&cheese+Chips+Strawberry", 1);
+                                    menuMeals.nazwa("Tuna+Salad+Chocolate", 2);
+                                    menuMeals.nazwa("Student Meal", 3);
+                                    menuMeals.nazwa("Create your meal", 4);
                                     menuMeals.nazwa("Exit", 5);
                                     RectangleShape backMeals;//tlo dla Meals
                                     backMeals.setSize(Vector2f(600, 800));
@@ -227,9 +227,9 @@ int main()
                                                             Menu menuCreatorSandwich(windowCreatorSandwich.getSize().x, windowCreatorSandwich.getSize().y);//obiekt menau dla kreatora kanapki
                                                             menuCreatorSandwich.nazwa("Beef", 0);
                                                             menuCreatorSandwich.nazwa("Ham", 1);
-                                                            menuCreatorSandwich.nazwa("Cheasse", 2);
+                                                            menuCreatorSandwich.nazwa("Cheese", 2);
                                                             menuCreatorSandwich.nazwa("Tuna", 3);
-                                                            menuCreatorSandwich.nazwa("Salad", 4);
+                                                            menuCreatorSandwich.nazwa("Lettuce", 4);
                                                             menuCreatorSandwich.nazwa("Exit", 5);
                                                             RectangleShape backCreatorSandwich;//tło dla kreatora kanapki
                                                             backCreatorSandwich.setSize(Vector2f(600, 800));
@@ -529,11 +529,11 @@ int main()
 
                                                             RenderWindow windowCreatorMeals(VideoMode(600, 800), "MealCreator");//okno dla kreatora Meals
                                                             Menu menuCreatorMeals(windowCreatorMeals.getSize().x, windowCreatorMeals.getSize().y);//obiekt menau dla kreatora melas
-                                                            menuCreatorMeals.nazwa("Beff Burger", 0);
-                                                            menuCreatorMeals.nazwa("Tuna Tost", 1);
+                                                            menuCreatorMeals.nazwa("Beff burger", 0);
+                                                            menuCreatorMeals.nazwa("Ham&cheese sandwich", 1);
                                                             menuCreatorMeals.nazwa("Chips", 2);
                                                             menuCreatorMeals.nazwa("Salad", 3);
-                                                            menuCreatorMeals.nazwa("Garlic", 4);
+                                                            menuCreatorMeals.nazwa("Garlic dip", 4);
                                                             menuCreatorMeals.nazwa("Exit", 5);
                                                             RectangleShape backCreatorMeals;//tło dla kreatora kanapki
                                                             backCreatorMeals.setSize(Vector2f(600, 800));
