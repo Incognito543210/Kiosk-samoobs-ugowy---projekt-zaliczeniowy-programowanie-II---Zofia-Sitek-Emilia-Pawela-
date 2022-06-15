@@ -1,2 +1,4 @@
 #pragma once
-void shakeOption();
+#include "AnOrder.h"
+
+void shakeOption(Order& anOrder);

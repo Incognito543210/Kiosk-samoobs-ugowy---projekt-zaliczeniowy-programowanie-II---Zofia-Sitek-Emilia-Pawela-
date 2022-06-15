@@ -11,7 +11,7 @@
 #include "sidesOption.h"
 
 
-void sidesOption()
+void sidesOption(Order &anOrder)
 {
 
     RenderWindow windowSides(VideoMode(600, 800), "Sides");// -||- dla Sides
@@ -68,18 +68,28 @@ void sidesOption()
                     int x = menuSides.GetPressedItem();
                     if (x == 0)
                     {
+                        anOrder.productName = "Chips";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 1)
                     {
+                        anOrder.productName = "Salad";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 2)
                     {
+                        anOrder.productName = "Ketchup";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 3)
                     {
+                        anOrder.productName = "KentuckyGold dip";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 4)
                     {
+                        anOrder.productName = "Garlic dip";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 5)
                     {

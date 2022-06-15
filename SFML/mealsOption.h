@@ -1,2 +1,4 @@
 #pragma once
-void mealsOption();
+#include "AnOrder.h"
+
+void mealsOption(Order &anOrder);

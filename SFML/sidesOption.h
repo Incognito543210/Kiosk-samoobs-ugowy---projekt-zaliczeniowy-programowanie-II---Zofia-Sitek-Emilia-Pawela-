@@ -1,2 +1,4 @@
 #pragma once
-void sidesOption();
+#include "AnOrder.h"
+
+void sidesOption(Order &anOrder);

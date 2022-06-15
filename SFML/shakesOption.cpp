@@ -13,7 +13,7 @@
 using namespace sf;
 using namespace std;
 
-void shakeOption()
+void shakeOption(Order& anOrder)
 {
     RenderWindow windowShakes(VideoMode(600, 800), "Shakes");// -||- dla shakes
     Menu menuShakes(windowShakes.getSize().x, windowShakes.getSize().y);//obiekt dla shakes
@@ -68,18 +68,28 @@ void shakeOption()
                     //opcje dla menu shakes
                     if (x == 0)
                     {
+                        anOrder.productName = "Strawberry shake";
+                        anOrder.addToOrder(anOrder.productName);                    
                     }
                     if (x == 1)
                     {
+                        anOrder.productName = "Vanilla shake";
+                        anOrder.addToOrder(anOrder.productName);                    
                     }
                     if (x == 2)
                     {
+                        anOrder.productName = "Chocolate shake";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 3)
                     {
+                        anOrder.productName = "Caramel shake";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 4)
                     {
+                        anOrder.productName = "Blueberry shake";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 5)
                     {

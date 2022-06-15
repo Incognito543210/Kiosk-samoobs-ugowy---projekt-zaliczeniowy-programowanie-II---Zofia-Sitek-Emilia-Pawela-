@@ -7,12 +7,13 @@
 #include "Ordernumerclass.h"
 #include "DeletingOrder.h"
 #include "Bill.h"
+#include "AnOrder.h"
 
 
 using namespace sf;
 using namespace std;
 
-void sandwitchOption()
+void sandwichOption(Order &anOrder)
 {
     RenderWindow windowSandwich(VideoMode(600, 800), "Sandwich"); //renderowanie okna dla kanapek
     Menu menuSandwich(windowSandwich.getSize().x, windowSandwich.getSize().y);//obiekt dla kanapek
@@ -59,21 +60,23 @@ void sandwitchOption()
                     //wybór kanapek w menu
                     if (x == 0)
                     {
-
-
+                        anOrder.productName = "Beef burger";
+                        anOrder.addToOrder(anOrder.productName);
                     }
-
                     if (x == 1)
                     {
-
+                        anOrder.productName = "Chicken burger";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 2)
                     {
-
+                        anOrder.productName = "Ham&cheese sandwich";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 3)
                     {
-
+                        anOrder.productName = "Tuna sandwich";
+                        anOrder.addToOrder(anOrder.productName);
                     }
 
                     if (x == 4)//kreator kanapki
@@ -125,15 +128,41 @@ void sandwitchOption()
                                     {//opcje dla kreatora kanapki
                                         if (x == 0)
                                         {
+                                            anOrder.isSandwich = 1;
+                                            anOrder.ingredientName = "Beef";
+                                            anOrder.addToSandwich(anOrder.ingredientName);
                                         }
                                         if (x == 1)
                                         {
+                                            if (anOrder.sandwichCreatorCounter <= 3)
+                                            {
+                                                anOrder.sandwichTab[anOrder.sandwichCreatorCounter] = "Ham";
+                                                anOrder.sandwichCreatorCounter++;
+                                            }
+                                        }
+                                        if (x == 2)
+                                        {
+                                            if (anOrder.sandwichCreatorCounter <= 3)
+                                            {
+                                                anOrder.sandwichTab[anOrder.sandwichCreatorCounter] = "Cheese";
+                                                anOrder.sandwichCreatorCounter++;
+                                            }
                                         }
                                         if (x == 3)
                                         {
+                                            if (anOrder.sandwichCreatorCounter <= 3)
+                                            {
+                                                anOrder.sandwichTab[anOrder.sandwichCreatorCounter] = "Tuna";
+                                                anOrder.sandwichCreatorCounter++;
+                                            }
                                         }
                                         if (x == 4)
                                         {
+                                            if (anOrder.sandwichCreatorCounter <= 3)
+                                            {
+                                                anOrder.sandwichTab[anOrder.sandwichCreatorCounter] = "Lettuce";
+                                                anOrder.sandwichCreatorCounter++;
+                                            }
                                         }
                                         if (x == 5)
                                         {

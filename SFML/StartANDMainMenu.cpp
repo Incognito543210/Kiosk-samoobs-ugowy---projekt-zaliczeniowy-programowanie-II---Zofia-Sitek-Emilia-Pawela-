@@ -12,13 +12,15 @@
 #include "mealsOption.h"
 #include "StartANDMainMenu.h"
 #include "ExitSure.h"
+#include "AnOrder.h"
 
 using namespace sf;
 using namespace std;
 
 
-void startAndMainMenu()
+void startAndMainMenu(Order& anOrder)
 {
+
     Font font;
     font.loadFromFile("arial.ttf");//zaladowanie czcionki
 
@@ -121,22 +123,22 @@ void startAndMainMenu()
 
                                         if (x == 0)// opcja kanapki
                                         {
-                                            sandwitchOption();
+                                            sandwichOption(anOrder);
                                         }
                                         if (x == 1)
                                         {
-                                            shakeOption();
+                                            shakeOption(anOrder);
                                         }
 
                                         if (x == 2)
                                         {
-                                            sidesOption();
+                                            sidesOption(anOrder);
 
                                         }//opcja dodatki
 
                                         if (x == 3)//opcja zestwy
                                         {
-                                            mealsOption();
+                                            mealsOption(anOrder);
 
 
                                         }
@@ -146,6 +148,9 @@ void startAndMainMenu()
                                             while (windowBill.isOpen())
                                             {
                                                 Event billEvent;
+
+                                                //wypisanie zamowienia
+                                                /*showOrder();*/
 
                                                 while (windowBill.pollEvent(billEvent))
                                                 {

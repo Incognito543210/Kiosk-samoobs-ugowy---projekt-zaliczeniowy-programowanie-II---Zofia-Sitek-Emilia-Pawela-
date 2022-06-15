@@ -11,7 +11,7 @@
 #include "sidesOption.h"
 #include "mealsOption.h"
 
-void mealsOption()
+void mealsOption(Order &anOrder)
 {
     RenderWindow windowMeals(VideoMode(600, 800), "Meals");// -||- dla MEals
     Menu menuMeals(windowMeals.getSize().x, windowMeals.getSize().y);//obiekt dla Meals
@@ -58,21 +58,23 @@ void mealsOption()
                     //opcje dla zestawow
                     if (x == 0)
                     {
-
-
+                        anOrder.productName = "Beef+Chips+Blueberry";
+                        anOrder.addToOrder(anOrder.productName);
                     }
-
                     if (x == 1)
                     {
-
+                        anOrder.productName = "Ham+Chips+Strawberry";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 2)
                     {
-
+                        anOrder.productName = "Tuna+Salad+Chocolate";
+                        anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 3)
                     {
-
+                        anOrder.productName = "Student Meal";
+                        anOrder.addToOrder(anOrder.productName);
                     }
 
                     if (x == 4)
@@ -80,7 +82,7 @@ void mealsOption()
 
                         RenderWindow windowCreatorMeals(VideoMode(600, 800), "MealCreator");//okno dla kreatora Meals
                         Menu menuCreatorMeals(windowCreatorMeals.getSize().x, windowCreatorMeals.getSize().y);//obiekt menau dla kreatora melas
-                        menuCreatorMeals.nazwa("Beff burger", 0);
+                        menuCreatorMeals.nazwa("Beef burger", 0);
                         menuCreatorMeals.nazwa("Ham&cheese sandwich", 1);
                         menuCreatorMeals.nazwa("Chips", 2);
                         menuCreatorMeals.nazwa("Salad", 3);
@@ -125,15 +127,43 @@ void mealsOption()
                                         //opcje dla kreatora zestawow
                                         if (x == 0)
                                         {
+                                            if (anOrder.mealCreatorCounter <= 2)
+                                            {
+                                                anOrder.mealTab[anOrder.mealCreatorCounter] = "Beef burger";
+                                                anOrder.mealCreatorCounter++;
+                                            }
                                         }
                                         if (x == 1)
                                         {
+                                            if (anOrder.mealCreatorCounter <= 2)
+                                            {
+                                                anOrder.mealTab[anOrder.mealCreatorCounter] = "Ham&cheese sandwich";
+                                                anOrder.mealCreatorCounter++;
+                                            }
+                                        }
+                                        if (x == 2)
+                                        {
+                                            if (anOrder.mealCreatorCounter <= 2)
+                                            {
+                                                anOrder.mealTab[anOrder.mealCreatorCounter] = "Chips";
+                                                anOrder.mealCreatorCounter++;
+                                            }
                                         }
                                         if (x == 3)
                                         {
+                                            if (anOrder.mealCreatorCounter <= 2)
+                                            {
+                                                anOrder.mealTab[anOrder.mealCreatorCounter] = "Salad";
+                                                anOrder.mealCreatorCounter++;
+                                            }
                                         }
                                         if (x == 4)
                                         {
+                                            if (anOrder.mealCreatorCounter <= 2)
+                                            {
+                                                anOrder.mealTab[anOrder.mealCreatorCounter] = "Garlic dip";
+                                                anOrder.mealCreatorCounter++;
+                                            }
                                         }
                                         if (x == 5)
                                         {
@@ -141,17 +171,12 @@ void mealsOption()
                                             break;
                                         }
                                     }
-
-
                                 }
                             }
                             windowCreatorMeals.clear();
                             windowCreatorMeals.draw(backCreatorMeals);
                             menuCreatorMeals.draw(windowCreatorMeals);
                             windowCreatorMeals.display();
-
-
-
                         }
                     }
                     if (x == 5)//zamkniecie okna meals
@@ -159,19 +184,9 @@ void mealsOption()
                         windowMeals.close();
                         break;
                     }
-
                 }
-
-
-
-
-
             }
-
         }
-
-
-
         windowMeals.clear();
         windowMeals.draw(backMeals);
         menuMeals.draw(windowMeals);

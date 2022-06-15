@@ -11,10 +11,11 @@
 #include "sidesOption.h"
 #include "shakesOption.h"
 #include "mealsOption.h"
+#include "AnOrder.h"
 
 
 using namespace sf;
 using namespace std;
 
 
-void startAndMainMenu();
+void startAndMainMenu(Order &anOrder);

@@ -12,6 +12,7 @@
 #include "mealsOption.h"
 #include "StartANDMainMenu.h"
 #include "ExitSure.h"
+#include "AnOrder.h"
 
 using namespace sf;
 using namespace std;
@@ -20,10 +21,11 @@ using namespace std;
 //funkcja main
 
 int main()
-
 {
-  startAndMainMenu();
+    Order yourOrder;
+    cout << yourOrder.productNumber << endl;
+    startAndMainMenu(yourOrder);
     
-        return 0;
-    }
+    return 0;
+ }
 

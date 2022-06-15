@@ -1,2 +1,4 @@
 #pragma once
-void sandwitchOption();
+#include "AnOrder.h"
+
+void sandwichOption(Order &anOrder);
