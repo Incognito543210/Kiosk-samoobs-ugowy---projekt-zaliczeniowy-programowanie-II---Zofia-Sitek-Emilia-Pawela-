@@ -127,43 +127,28 @@ void mealsOption(Order &anOrder)
                                         //opcje dla kreatora zestawow
                                         if (x == 0)
                                         {
-                                            if (anOrder.mealCreatorCounter <= 2)
-                                            {
-                                                anOrder.mealTab[anOrder.mealCreatorCounter] = "Beef burger";
-                                                anOrder.mealCreatorCounter++;
-                                            }
+                                            anOrder.partOfMealName = "Beef burger";
+                                            anOrder.addToMeal(anOrder.partOfMealName);
                                         }
                                         if (x == 1)
                                         {
-                                            if (anOrder.mealCreatorCounter <= 2)
-                                            {
-                                                anOrder.mealTab[anOrder.mealCreatorCounter] = "Ham&cheese sandwich";
-                                                anOrder.mealCreatorCounter++;
-                                            }
+                                            anOrder.partOfMealName = "Ham&cheese sandwich";
+                                            anOrder.addToMeal(anOrder.partOfMealName);
                                         }
                                         if (x == 2)
                                         {
-                                            if (anOrder.mealCreatorCounter <= 2)
-                                            {
-                                                anOrder.mealTab[anOrder.mealCreatorCounter] = "Chips";
-                                                anOrder.mealCreatorCounter++;
-                                            }
+                                            anOrder.partOfMealName = "Chips";
+                                            anOrder.addToMeal(anOrder.partOfMealName);
                                         }
                                         if (x == 3)
                                         {
-                                            if (anOrder.mealCreatorCounter <= 2)
-                                            {
-                                                anOrder.mealTab[anOrder.mealCreatorCounter] = "Salad";
-                                                anOrder.mealCreatorCounter++;
-                                            }
+                                            anOrder.partOfMealName = "Salad";
+                                            anOrder.addToMeal(anOrder.partOfMealName);
                                         }
                                         if (x == 4)
                                         {
-                                            if (anOrder.mealCreatorCounter <= 2)
-                                            {
-                                                anOrder.mealTab[anOrder.mealCreatorCounter] = "Garlic dip";
-                                                anOrder.mealCreatorCounter++;
-                                            }
+                                            anOrder.partOfMealName = "Garlic dip";
+                                            anOrder.addToMeal(anOrder.partOfMealName);
                                         }
                                         if (x == 5)
                                         {

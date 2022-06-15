@@ -134,35 +134,23 @@ void sandwichOption(Order &anOrder)
                                         }
                                         if (x == 1)
                                         {
-                                            if (anOrder.sandwichCreatorCounter <= 3)
-                                            {
-                                                anOrder.sandwichTab[anOrder.sandwichCreatorCounter] = "Ham";
-                                                anOrder.sandwichCreatorCounter++;
-                                            }
+                                            anOrder.ingredientName = "Ham";
+                                            anOrder.addToSandwich(anOrder.ingredientName);
                                         }
                                         if (x == 2)
                                         {
-                                            if (anOrder.sandwichCreatorCounter <= 3)
-                                            {
-                                                anOrder.sandwichTab[anOrder.sandwichCreatorCounter] = "Cheese";
-                                                anOrder.sandwichCreatorCounter++;
-                                            }
+                                            anOrder.ingredientName = "Cheese";
+                                            anOrder.addToSandwich(anOrder.ingredientName);
                                         }
                                         if (x == 3)
                                         {
-                                            if (anOrder.sandwichCreatorCounter <= 3)
-                                            {
-                                                anOrder.sandwichTab[anOrder.sandwichCreatorCounter] = "Tuna";
-                                                anOrder.sandwichCreatorCounter++;
-                                            }
+                                            anOrder.ingredientName = "Tuna";
+                                            anOrder.addToSandwich(anOrder.ingredientName);
                                         }
                                         if (x == 4)
                                         {
-                                            if (anOrder.sandwichCreatorCounter <= 3)
-                                            {
-                                                anOrder.sandwichTab[anOrder.sandwichCreatorCounter] = "Lettuce";
-                                                anOrder.sandwichCreatorCounter++;
-                                            }
+                                            anOrder.ingredientName = "Lettuce";
+                                            anOrder.addToSandwich(anOrder.ingredientName);
                                         }
                                         if (x == 5)
                                         {
