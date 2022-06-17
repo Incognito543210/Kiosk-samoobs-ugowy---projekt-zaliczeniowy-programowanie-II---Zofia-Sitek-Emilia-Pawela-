@@ -2,7 +2,7 @@
 //klasa dla menu przy wybraniu opcji bill
 classBill::classBill(float width, float height, Order &anOrder)
 {
-	if (!font.loadFromFile("arial.ttf"))
+	if (!font.loadFromFile("BAUHS93.ttf"))
 	{
 		//handle error
 	}
@@ -61,7 +61,7 @@ void classBill::MoveLeft()
 }
 void classBill::MoveRight()
 {
-	if (selectedItemIndex + 1 < 4)
+	if (selectedItemIndex + 1 < 3)
 	{
 		enter[selectedItemIndex].setFillColor(Color::White);
 		selectedItemIndex++;

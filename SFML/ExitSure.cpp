@@ -2,7 +2,7 @@
 
 ExitSure::ExitSure(float width, float height)
 {
-	if (!font.loadFromFile("arial.ttf"))
+	if (!font.loadFromFile("BAUHS93.ttf"))
 	{
 		//handle error
 	}

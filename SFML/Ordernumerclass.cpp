@@ -2,7 +2,7 @@
 //klasa dla menu przy numerze zamowienia
 Ordernumerclass::Ordernumerclass(float width, float height)
 {
-	if (!font.loadFromFile("arial.ttf"))
+	if (!font.loadFromFile("BAUHS93.ttf"))
 	{
 		//handle error
 	}
