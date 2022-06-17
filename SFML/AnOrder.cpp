@@ -103,10 +103,10 @@ void Order::addMeal()
 
 void Order::removeFromOrder(int numberOfProduct)
 {
+	if (orderTab[numberOfProduct] != "") productNumber--;
 	orderTab[numberOfProduct] = "";
 	sum -= orderPrices[numberOfProduct];
 	orderPrices[numberOfProduct] = 0;
-	productNumber--;
 }
 
 void Order::upgradeOrder()
