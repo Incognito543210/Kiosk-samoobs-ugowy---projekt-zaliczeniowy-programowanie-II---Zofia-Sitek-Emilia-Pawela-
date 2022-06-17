@@ -22,11 +22,11 @@ void mealsOption(Order &anOrder)
 
     RenderWindow windowMeals(VideoMode(600, 800), "Meals");// -||- dla MEals
     Menu menuMeals(windowMeals.getSize().x, windowMeals.getSize().y);//obiekt dla Meals
-    menuMeals.name("Beef+Chips+Bberry", 0);//przypisanie nazw dla menu Meals
-    menuMeals.name("Ham+Chips+Sberry", 1);
-    menuMeals.name("Tuna+Salad+Choco", 2);
-    menuMeals.name("Student Meal", 3);
-    menuMeals.name("Create your meal", 4);
+    menuMeals.name("Beef+Chips+Bberry 10$", 0);//przypisanie nazw dla menu Meals
+    menuMeals.name("Ham+Chips+Sberry 10$", 1);
+    menuMeals.name("Tuna+Salad+Choco 10$", 2);
+    menuMeals.name("Student Meal 5$", 3);
+    menuMeals.name("Create your meal 12$", 4);
     menuMeals.name("EXIT", 5);
     RectangleShape backMeals;//tlo dla Meals
     backMeals.setSize(Vector2f(600, 800));
@@ -65,22 +65,22 @@ void mealsOption(Order &anOrder)
                     //opcje dla zestawow
                     if (x == 0)
                     {
-                        anOrder.productName = "Beef+Chips+Bberry";
+                        anOrder.productName = "Beef+Chips+Bberry 10$";
                         anOrder.addToOrder(anOrder.productName,10);
                     }
                     if (x == 1)
                     {
-                        anOrder.productName = "Ham+Chips+Sberry";
+                        anOrder.productName = "Ham+Chips+Sberry 10$";
                         anOrder.addToOrder(anOrder.productName,10);
                     }
                     if (x == 2)
                     {
-                        anOrder.productName = "Tuna+Salad+Choco";
+                        anOrder.productName = "Tuna+Salad+Choco 10$";
                         anOrder.addToOrder(anOrder.productName,10);
                     }
                     if (x == 3)
                     {
-                        anOrder.productName = "Student Meal";
+                        anOrder.productName = "Student Meal 5$";
                         anOrder.addToOrder(anOrder.productName,5);
                     }
 

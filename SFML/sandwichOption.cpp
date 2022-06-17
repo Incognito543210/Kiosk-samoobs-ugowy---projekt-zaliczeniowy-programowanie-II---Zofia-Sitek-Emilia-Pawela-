@@ -30,7 +30,7 @@ void sandwichOption(Order &anOrder)
     menuSandwich.name("Chicken burger 4$", 1);
     menuSandwich.name("Ham&cheese 3$", 2);
     menuSandwich.name("Tuna sandwich 2$", 3);
-    menuSandwich.name("Sandwich creator", 4);
+    menuSandwich.name("Sandwich creator 5$", 4);
     menuSandwich.name("EXIT", 5);
 
     RectangleShape backSandwich;//tlo dla kanapek
@@ -69,22 +69,22 @@ void sandwichOption(Order &anOrder)
                     //wybór kanapek w menu
                     if (x == 0)
                     {
-                        anOrder.productName = "Beef burger";                   
+                        anOrder.productName = "Beef burger 4$";                   
                         anOrder.addToOrder(anOrder.productName,4);
                     }
                     if (x == 1)
                     {
-                        anOrder.productName = "Chicken burger";
+                        anOrder.productName = "Chicken burger 4$";
                         anOrder.addToOrder(anOrder.productName,4);
                     }
                     if (x == 2)
                     {
-                        anOrder.productName = "Ham&cheese";
+                        anOrder.productName = "Ham&cheese 3$";
                         anOrder.addToOrder(anOrder.productName,3);
                     }
                     if (x == 3)
                     {
-                        anOrder.productName = "Tuna sandwich";
+                        anOrder.productName = "Tuna sandwich 2$";
                         anOrder.addToOrder(anOrder.productName,2);
                     }
 

@@ -23,11 +23,11 @@ void sidesOption(Order &anOrder)
 
     RenderWindow windowSides(VideoMode(600, 800), "Sides");// -||- dla Sides
     Menu menuSides(windowSides.getSize().x, windowSides.getSize().y);//obiekt dla sides
-    menuSides.name("Chips", 0);//przypisanie nazw dla menu sides
-    menuSides.name("Salad", 1);
-    menuSides.name("Ketchup", 2);
-    menuSides.name("KentuckyGold dip", 3);
-    menuSides.name("Garlic dip", 4);
+    menuSides.name("Chips 2$", 0);//przypisanie nazw dla menu sides
+    menuSides.name("Salad 2$", 1);
+    menuSides.name("Ketchup 1$", 2);
+    menuSides.name("KentuckyGold dip 1$", 3);
+    menuSides.name("Garlic dip 1$", 4);
     menuSides.name("EXIT", 5);
     RectangleShape backSides;//tlo dla sides
     backSides.setSize(Vector2f(600, 800));
@@ -75,27 +75,27 @@ void sidesOption(Order &anOrder)
                     int x = menuSides.GetPressedItem();
                     if (x == 0)
                     {
-                        anOrder.productName = "Chips";
+                        anOrder.productName = "Chips 2$";
                         anOrder.addToOrder(anOrder.productName,2);
                     }
                     if (x == 1)
                     {
-                        anOrder.productName = "Salad";
+                        anOrder.productName = "Salad 2$";
                         anOrder.addToOrder(anOrder.productName,2);
                     }
                     if (x == 2)
                     {
-                        anOrder.productName = "Ketchup";
+                        anOrder.productName = "Ketchup 1$";
                         anOrder.addToOrder(anOrder.productName,1);
                     }
                     if (x == 3)
                     {
-                        anOrder.productName = "KentuckyGold dip";
+                        anOrder.productName = "KentuckyGold dip 1$";
                         anOrder.addToOrder(anOrder.productName,1);
                     }
                     if (x == 4)
                     {
-                        anOrder.productName = "Garlic dip";
+                        anOrder.productName = "Garlic dip 1$";
                         anOrder.addToOrder(anOrder.productName,1);
                     }
                     if (x == 5)

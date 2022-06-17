@@ -26,11 +26,11 @@ void shakeOption(Order& anOrder)
     
     RenderWindow windowShakes(VideoMode(600, 800), "Shakes");// -||- dla shakes
     Menu menuShakes(windowShakes.getSize().x, windowShakes.getSize().y);//obiekt dla shakes
-    menuShakes.name("Strawberry", 0);//przypisanie nazw dla menu shakes
-    menuShakes.name("Vanilla", 1);
-    menuShakes.name("Chocolate", 2);
-    menuShakes.name("Caramel", 3);
-    menuShakes.name("Blueberry", 4);
+    menuShakes.name("Strawberry 3$", 0);//przypisanie nazw dla menu shakes
+    menuShakes.name("Vanilla 3$", 1);
+    menuShakes.name("Chocolate 3$", 2);
+    menuShakes.name("Caramel 3$", 3);
+    menuShakes.name("Blueberry 3$", 4);
     menuShakes.name("EXIT", 5);
     RectangleShape backShakes;//tlo dla shakes
     backShakes.setSize(Vector2f(600, 800));
@@ -77,27 +77,27 @@ void shakeOption(Order& anOrder)
                     //opcje dla menu shakes
                     if (x == 0)
                     {
-                        anOrder.productName = "Strawberry shake";
+                        anOrder.productName = "Strawberry shake 3$";
                         anOrder.addToOrder(anOrder.productName,3);                    
                     }
                     if (x == 1)
                     {
-                        anOrder.productName = "Vanilla shake";
+                        anOrder.productName = "Vanilla shake 3$";
                         anOrder.addToOrder(anOrder.productName,3);                    
                     }
                     if (x == 2)
                     {
-                        anOrder.productName = "Chocolate shake";
+                        anOrder.productName = "Chocolate shake 3$";
                         anOrder.addToOrder(anOrder.productName,3);
                     }
                     if (x == 3)
                     {
-                        anOrder.productName = "Caramel shake";
+                        anOrder.productName = "Caramel shake 3$";
                         anOrder.addToOrder(anOrder.productName,3);
                     }
                     if (x == 4)
                     {
-                        anOrder.productName = "Blueberry shake";
+                        anOrder.productName = "Blueberry shake 3$";
                         anOrder.addToOrder(anOrder.productName,3);
                     }
                     if (x == 5)

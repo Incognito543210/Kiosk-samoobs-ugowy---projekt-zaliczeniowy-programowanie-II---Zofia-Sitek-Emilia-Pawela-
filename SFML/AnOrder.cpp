@@ -61,7 +61,7 @@ void Order::addSandwich()
 		{
 			sandwichIngredients += sandwichTab[i] + " ";
 		}
-		addToOrder("Sandwich " + sandwichIngredients, 4);
+		addToOrder("Sandwich: " + sandwichIngredients +"5$", 5);
 		//czyszczenie elementów kanapki
 		sandwichCreatorCounter = 0;
 		sandwichIngredients = "";
@@ -90,7 +90,7 @@ void Order::addMeal()
 		{
 			mealIngredients += mealTab[i] + " ";
 		}
-		addToOrder("Meal " + mealIngredients, 10);
+		addToOrder("Meal: " + mealIngredients +" 12$", 12);
 		//czyszczenie elementow posilku
 		mealCreatorCounter = 0;
 		mealIngredients = "";
