@@ -11,23 +11,23 @@ Menu::Menu(float width, float height)
 
 	menu[0].setFont(font);
 	menu[0].setFillColor(Color::Red);
-	menu[0].setPosition(60.f,245.f);
+	menu[0].setPosition(40.f,245.f);
 
 	menu[1].setFont(font);
 	menu[1].setFillColor(Color::Black);
-	menu[1].setPosition(60.f, 340.f);
+	menu[1].setPosition(40.f, 340.f);
 
 	menu[2].setFont(font);
 	menu[2].setFillColor(Color::Black);
-	menu[2].setPosition(60.f, 423.f);
+	menu[2].setPosition(40.f, 423.f);
 
 	menu[3].setFont(font);
 	menu[3].setFillColor(Color::Black);
-	menu[3].setPosition(60.f, 510.f);
+	menu[3].setPosition(40.f, 510.f);
 
 	menu[4].setFont(font);
 	menu[4].setFillColor(Color::Black);
-	menu[4].setPosition(60.f, 595.f);
+	menu[4].setPosition(40.f, 595.f);
 
 	menu[5].setFont(font);
 	menu[5].setFillColor(Color::Black);
