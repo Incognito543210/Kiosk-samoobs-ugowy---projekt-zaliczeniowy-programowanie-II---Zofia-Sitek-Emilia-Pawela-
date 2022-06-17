@@ -35,7 +35,7 @@ void Order::addToOrder(string text, int price)
 {
 	if (productNumber <= 7)
 	{
-		orderTab[productNumber] = text;
+		orderTab[productNumber] = to_string(productNumber+1)+") "+text;
 		orderPrices[productNumber] = price;
 		productNumber++;
 		cout << productNumber << " " << text << endl;
@@ -121,6 +121,7 @@ void Order::upgradeOrder()
 				if (orderTab[j] != "")
 				{
 					orderTab[i] = orderTab[j];
+					orderTab[i].replace(0, 1, to_string(i + 1));
 					orderTab[j] = "";
 					break;
 				}
