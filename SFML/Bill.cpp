@@ -34,7 +34,7 @@ classBill::classBill(float width, float height, Order &anOrder)
 	orderSum = anOrder.sum;
 	enter[11].setFont(font);
 	enter[11].setFillColor(Color::Black);
-	enter[11].setString("Total: "+orderSum);
+	enter[11].setString("Total: "+string(orderSum));
 	enter[11].setPosition(350.f, 600.f);
 
 	selectedItemIndex = 0;
