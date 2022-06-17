@@ -247,91 +247,94 @@ void startAndMainMenu(Order& anOrder)
                                                             }
                                                             if (x == 1)//opcja usun
                                                             {
-                                                                windowBill.close();
-
-                                                                while (windowDeletingOrder.isOpen())
+                                                                if (anOrder.sum != 0)
                                                                 {
-                                                                    Event deletingOrderEvent;
-                                                                    while (windowDeletingOrder.pollEvent(deletingOrderEvent))
+                                                                    windowBill.close();
+
+                                                                    while (windowDeletingOrder.isOpen())
                                                                     {
-                                                                        if (deletingOrderEvent.type == Event::Closed)
+                                                                        Event deletingOrderEvent;
+                                                                        while (windowDeletingOrder.pollEvent(deletingOrderEvent))
                                                                         {
-                                                                            windowDeletingOrder.close();
-                                                                        }
-                                                                        if (deletingOrderEvent.type == Event::KeyPressed)
-                                                                        {
-                                                                            if (deletingOrderEvent.key.code == Keyboard::Escape)
+                                                                            if (deletingOrderEvent.type == Event::Closed)
                                                                             {
                                                                                 windowDeletingOrder.close();
                                                                             }
-                                                                        }
-                                                                        if (deletingOrderEvent.type == Event::KeyReleased)
-                                                                        {
-
-                                                                            if (deletingOrderEvent.key.code == Keyboard::Up)
+                                                                            if (deletingOrderEvent.type == Event::KeyPressed)
                                                                             {
-                                                                                menuDeletingOrder.MoveUp();
-                                                                                break;
-                                                                            }
-                                                                            if (deletingOrderEvent.key.code == Keyboard::Down)
-                                                                            {
-                                                                                menuDeletingOrder.MoveDown();
-                                                                                break;
-
-                                                                            }
-
-                                                                            if (deletingOrderEvent.key.code == Keyboard::Return)
-                                                                            {
-                                                                                int x = menuDeletingOrder.GetPressedItem();
-
-                                                                                if (x == 0)
+                                                                                if (deletingOrderEvent.key.code == Keyboard::Escape)
                                                                                 {
-                                                                                    anOrder.removeFromOrder(0);
-                                                                                }
-                                                                                if (x == 1)
-                                                                                {
-                                                                                    anOrder.removeFromOrder(1);
-                                                                                }
-                                                                                if (x == 2)
-                                                                                {
-                                                                                    anOrder.removeFromOrder(2);
-                                                                                }
-                                                                                if (x == 3)
-                                                                                {
-                                                                                    anOrder.removeFromOrder(3);
-                                                                                }
-                                                                                if (x == 4)
-                                                                                {
-                                                                                    anOrder.removeFromOrder(4);
-                                                                                }
-                                                                                if (x == 5)
-                                                                                {
-                                                                                    anOrder.removeFromOrder(5);
-                                                                                }
-                                                                                if (x == 6)
-                                                                                {
-                                                                                    anOrder.removeFromOrder(6);
-                                                                                }
-                                                                                if (x == 7)
-                                                                                {
-                                                                                    anOrder.removeFromOrder(7);
-                                                                                }
-                                                                                if (x == 8)//opcja exit
-                                                                                {
-                                                                                    anOrder.upgradeOrder();
                                                                                     windowDeletingOrder.close();
+                                                                                }
+                                                                            }
+                                                                            if (deletingOrderEvent.type == Event::KeyReleased)
+                                                                            {
+
+                                                                                if (deletingOrderEvent.key.code == Keyboard::Up)
+                                                                                {
+                                                                                    menuDeletingOrder.MoveUp();
                                                                                     break;
                                                                                 }
+                                                                                if (deletingOrderEvent.key.code == Keyboard::Down)
+                                                                                {
+                                                                                    menuDeletingOrder.MoveDown();
+                                                                                    break;
+
+                                                                                }
+
+                                                                                if (deletingOrderEvent.key.code == Keyboard::Return)
+                                                                                {
+                                                                                    int x = menuDeletingOrder.GetPressedItem();
+
+                                                                                    if (x == 0)
+                                                                                    {
+                                                                                        anOrder.removeFromOrder(0);
+                                                                                    }
+                                                                                    if (x == 1)
+                                                                                    {
+                                                                                        anOrder.removeFromOrder(1);
+                                                                                    }
+                                                                                    if (x == 2)
+                                                                                    {
+                                                                                        anOrder.removeFromOrder(2);
+                                                                                    }
+                                                                                    if (x == 3)
+                                                                                    {
+                                                                                        anOrder.removeFromOrder(3);
+                                                                                    }
+                                                                                    if (x == 4)
+                                                                                    {
+                                                                                        anOrder.removeFromOrder(4);
+                                                                                    }
+                                                                                    if (x == 5)
+                                                                                    {
+                                                                                        anOrder.removeFromOrder(5);
+                                                                                    }
+                                                                                    if (x == 6)
+                                                                                    {
+                                                                                        anOrder.removeFromOrder(6);
+                                                                                    }
+                                                                                    if (x == 7)
+                                                                                    {
+                                                                                        anOrder.removeFromOrder(7);
+                                                                                    }
+                                                                                    if (x == 8)//opcja exit
+                                                                                    {
+                                                                                        anOrder.upgradeOrder();
+                                                                                        windowDeletingOrder.close();
+                                                                                        break;
+                                                                                    }
+                                                                                }
                                                                             }
                                                                         }
-                                                                    }
-                                                                    windowNumerOrder.close();
-                                                                    windowDeletingOrder.clear();
-                                                                    windowDeletingOrder.draw(backDeletingOrder);
-                                                                    menuDeletingOrder.draw(windowDeletingOrder);
-                                                                    
-                                                                    windowDeletingOrder.display();
+                                                                        windowNumerOrder.close();
+                                                                        windowDeletingOrder.clear();
+                                                                        windowDeletingOrder.draw(backDeletingOrder);
+                                                                        menuDeletingOrder.draw(windowDeletingOrder);
 
+                                                                        windowDeletingOrder.display();
+
+                                                                    }
                                                                 }
                                                             }
                                                             if (x == 2)//opcja exit
