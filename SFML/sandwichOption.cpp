@@ -127,8 +127,7 @@ void sandwichOption(Order &anOrder)
                                     if (creatorSandwichEvent.key.code == Keyboard::Return)
                                     {//opcje dla kreatora kanapki
                                         if (x == 0)
-                                        {
-                                            anOrder.isSandwich = 1;
+                                        {                                        
                                             anOrder.ingredientName = "Beef";
                                             anOrder.addToSandwich(anOrder.ingredientName);
                                         }
@@ -154,6 +153,7 @@ void sandwichOption(Order &anOrder)
                                         }
                                         if (x == 5)
                                         {
+                                            anOrder.addSandwich();
                                             windowCreatorSandwich.close();
                                             break;
                                         }
