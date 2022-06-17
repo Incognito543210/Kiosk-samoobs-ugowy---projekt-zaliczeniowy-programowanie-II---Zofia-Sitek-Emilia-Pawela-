@@ -22,7 +22,7 @@ void startAndMainMenu(Order& anOrder)
 {
 
     Font font;
-    font.loadFromFile("arial.ttf");//zaladowanie czcionki
+    font.loadFromFile("BAUHS93.ttf");//zaladowanie czcionki
 
     RenderWindow windowStart{ VideoMode(600,800),"Start" };//renderowamie okno dla start
     Enter menuStart(windowStart.getSize().x, windowStart.getSize().y);//obiekt menu dla start
