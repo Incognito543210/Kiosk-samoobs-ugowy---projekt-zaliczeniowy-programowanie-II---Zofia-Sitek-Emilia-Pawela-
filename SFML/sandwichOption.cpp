@@ -14,7 +14,16 @@ using namespace sf;
 using namespace std;
 
 void sandwichOption(Order &anOrder)
+
 {
+
+    Font font;
+    font.loadFromFile("BAUHS93.ttf");
+
+    Text noteSandwich(" Note: Press ENTER to add a product to the order.", font, 18);
+    noteSandwich.setFillColor(Color::Black);
+    noteSandwich.setPosition(57.f, 730.f);
+    
     RenderWindow windowSandwich(VideoMode(600, 800), "Sandwich"); //renderowanie okna dla kanapek
     Menu menuSandwich(windowSandwich.getSize().x, windowSandwich.getSize().y);//obiekt dla kanapek
     menuSandwich.name("Beef burger", 0);//przypisanie nazw dla menu kanapki
@@ -96,16 +105,13 @@ void sandwichOption(Order &anOrder)
                         imageBackCreatorSandwich.loadFromFile("kreatorwybur kanapki.png");
                         backCreatorSandwich.setTexture(&imageBackCreatorSandwich);
 
-                        Font font;
-                        font.loadFromFile("BAUHS93.ttf");
-
 
                         Text warninngCreatorSandwich1(" Note: The maximum number of products in a sandwich is 4, products", font, 14);
                         warninngCreatorSandwich1.setFillColor(Color::Black);
-                        warninngCreatorSandwich1.setPosition(63.f, 650.f);
+                        warninngCreatorSandwich1.setPosition(60.f, 650.f);
                         Text warninngCreatorSandwich2(" above this quantity are not added to the sandwich.", font, 14);
                         warninngCreatorSandwich2.setFillColor(Color::Black);
-                        warninngCreatorSandwich2.setPosition(63.f, 664.f);
+                        warninngCreatorSandwich2.setPosition(60.f, 664.f);
                      
 
                         while (windowCreatorSandwich.isOpen())
@@ -206,6 +212,7 @@ void sandwichOption(Order &anOrder)
         windowSandwich.clear();
         windowSandwich.draw(backSandwich);
         menuSandwich.draw(windowSandwich);
+        windowSandwich.draw(noteSandwich);
         windowSandwich.display();
     }
 }
