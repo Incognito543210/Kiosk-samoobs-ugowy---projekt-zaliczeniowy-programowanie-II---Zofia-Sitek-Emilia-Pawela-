@@ -20,9 +20,8 @@ using namespace std;
 
 void startAndMainMenu(Order& anOrder)
 {
-
-    Font font;
-    font.loadFromFile("BAUHS93.ttf");//zaladowanie czcionki
+     Font font;
+    font.loadFromFile("BAUHS93.ttf");
 
     RenderWindow windowStart{ VideoMode(600,800),"Start" };//renderowamie okno dla start
     Enter menuStart(windowStart.getSize().x, windowStart.getSize().y);//obiekt menu dla start
@@ -43,6 +42,10 @@ void startAndMainMenu(Order& anOrder)
         Text warninng3(" basket or remove products from it, go to the -Bill- tab. ", font, 14);
         warninng3.setFillColor(Color::Black);
         warninng3.setPosition(63.f, 658.f);
+
+        Text warninngBill(" Note: To pay, there must be at least one product in the basket.", font, 14);
+        warninngBill.setFillColor(Color::Black);
+        warninngBill.setPosition(63.f, 650.f);
 
 
         Event eventStart;
@@ -72,12 +75,12 @@ void startAndMainMenu(Order& anOrder)
                     {
                         RenderWindow windowMainMenu{ VideoMode(600,800),"MainMenu" };//renderowanie okna dla main menu
                         Menu menuMainMenu(windowMainMenu.getSize().x, windowMainMenu.getSize().y);//obiekt dla main menu
-                        menuMainMenu.nazwa("Sandwiches", 0);
-                        menuMainMenu.nazwa("Shakes", 1);
-                        menuMainMenu.nazwa("Sides", 2);
-                        menuMainMenu.nazwa("Meals", 3);
-                        menuMainMenu.nazwa("Bill", 4);
-                        menuMainMenu.nazwa("Exit", 5);
+                        menuMainMenu.name("Sandwiches", 0);
+                        menuMainMenu.name("Shakes", 1);
+                        menuMainMenu.name("Sides", 2);
+                        menuMainMenu.name("Meals", 3);
+                        menuMainMenu.name("Bill", 4);
+                        menuMainMenu.name("EXIT", 5);
 
                         RectangleShape backMainMenu;//t³o dla main menu
                         backMainMenu.setSize(Vector2f(600, 800));
@@ -192,6 +195,10 @@ void startAndMainMenu(Order& anOrder)
                                                             Texture imageBackDeletingOrder;
                                                             imageBackDeletingOrder.loadFromFile("delate.png");
                                                             backDeletingOrder.setTexture(&imageBackDeletingOrder);
+
+                                                         
+
+                                                          
 
                                                             int x = menuBill.GetPressedItem();
 
@@ -322,7 +329,9 @@ void startAndMainMenu(Order& anOrder)
                                                                     windowDeletingOrder.clear();
                                                                     windowDeletingOrder.draw(backDeletingOrder);
                                                                     menuDeletingOrder.draw(windowDeletingOrder);
+                                                                    
                                                                     windowDeletingOrder.display();
+
                                                                 }
                                                             }
                                                             if (x == 2)//opcja exit
@@ -336,6 +345,7 @@ void startAndMainMenu(Order& anOrder)
                                                 windowBill.clear();
                                                 windowBill.draw(backBill);
                                                 menuBill.draw(windowBill);
+                                                windowBill.draw(warninngBill);
                                                 windowBill.display();
                                             }
                                         }

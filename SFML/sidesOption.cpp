@@ -16,12 +16,12 @@ void sidesOption(Order &anOrder)
 
     RenderWindow windowSides(VideoMode(600, 800), "Sides");// -||- dla Sides
     Menu menuSides(windowSides.getSize().x, windowSides.getSize().y);//obiekt dla sides
-    menuSides.nazwa("Chips", 0);//przypisanie nazw dla menu sides
-    menuSides.nazwa("Salad", 1);
-    menuSides.nazwa("Ketchup", 2);
-    menuSides.nazwa("KentuckyGold dip", 3);
-    menuSides.nazwa("Garlic dip", 4);
-    menuSides.nazwa("Exit", 5);
+    menuSides.name("Chips", 0);//przypisanie nazw dla menu sides
+    menuSides.name("Salad", 1);
+    menuSides.name("Ketchup", 2);
+    menuSides.name("KentuckyGold dip", 3);
+    menuSides.name("Garlic dip", 4);
+    menuSides.name("EXIT", 5);
     RectangleShape backSides;//tlo dla sides
     backSides.setSize(Vector2f(600, 800));
     Texture imageBackSides;

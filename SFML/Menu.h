@@ -24,7 +24,7 @@ public:
 
 
 	void draw(RenderWindow& window);
-	void nazwa(string nazwa, int k);
+	void name(string nazwa, int k);
 	void MoveUp();
 	void MoveDown();
 	int GetPressedItem() { return selectedItemIndex; }

@@ -52,7 +52,7 @@ DeletingOrder::DeletingOrder(float width, float height)
 	menu[8].setFont(font);
 	menu[8].setFillColor(Color::Black);
 	menu[8].setString("EXIT");
-	menu[8].setPosition(526.f, 763.f);
+	menu[8].setPosition(525.f, 761.f);
 	selectedItemIndex = 0;
 }
 

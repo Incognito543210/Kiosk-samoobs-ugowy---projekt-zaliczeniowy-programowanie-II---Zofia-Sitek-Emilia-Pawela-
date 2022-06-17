@@ -15,12 +15,12 @@ void mealsOption(Order &anOrder)
 {
     RenderWindow windowMeals(VideoMode(600, 800), "Meals");// -||- dla MEals
     Menu menuMeals(windowMeals.getSize().x, windowMeals.getSize().y);//obiekt dla Meals
-    menuMeals.nazwa("Beef+Chips+Blueberry", 0);//przypisanie nazw dla menu Meals
-    menuMeals.nazwa("Ham+Chips+Strawberry", 1);
-    menuMeals.nazwa("Tuna+Salad+Chocolate", 2);
-    menuMeals.nazwa("Student Meal", 3);
-    menuMeals.nazwa("Create your meal", 4);
-    menuMeals.nazwa("Exit", 5);
+    menuMeals.name("Beef+Chips+Blueberry", 0);//przypisanie nazw dla menu Meals
+    menuMeals.name("Ham+Chips+Strawberry", 1);
+    menuMeals.name("Tuna+Salad+Chocolate", 2);
+    menuMeals.name("Student Meal", 3);
+    menuMeals.name("Create your meal", 4);
+    menuMeals.name("EXIT", 5);
     RectangleShape backMeals;//tlo dla Meals
     backMeals.setSize(Vector2f(600, 800));
     Texture imageBackMeals;
@@ -82,17 +82,28 @@ void mealsOption(Order &anOrder)
 
                         RenderWindow windowCreatorMeals(VideoMode(600, 800), "MealCreator");//okno dla kreatora Meals
                         Menu menuCreatorMeals(windowCreatorMeals.getSize().x, windowCreatorMeals.getSize().y);//obiekt menau dla kreatora melas
-                        menuCreatorMeals.nazwa("Beef burger", 0);
-                        menuCreatorMeals.nazwa("Ham&cheese sandwich", 1);
-                        menuCreatorMeals.nazwa("Chips", 2);
-                        menuCreatorMeals.nazwa("Salad", 3);
-                        menuCreatorMeals.nazwa("Garlic dip", 4);
-                        menuCreatorMeals.nazwa("Exit", 5);
+                        menuCreatorMeals.name("Beef burger", 0);
+                        menuCreatorMeals.name("Ham&cheese sandwich", 1);
+                        menuCreatorMeals.name("Chips", 2);
+                        menuCreatorMeals.name("Salad", 3);
+                        menuCreatorMeals.name("Garlic dip", 4);
+                        menuCreatorMeals.name("EXIT", 5);
                         RectangleShape backCreatorMeals;//t³o dla kreatora kanapki
                         backCreatorMeals.setSize(Vector2f(600, 800));
                         Texture imageBackCreatorMeals;
                         imageBackCreatorMeals.loadFromFile("mealcreator.png");
                         backCreatorMeals.setTexture(&imageBackCreatorMeals);
+
+                        Font font;
+                        font.loadFromFile("BAUHS93.ttf");
+
+                        Text warninngCreatorMeals1(" Note: The maximum number of products in a meal is 3, products", font, 14);
+                        warninngCreatorMeals1.setFillColor(Color::Black);
+                        warninngCreatorMeals1.setPosition(63.f, 650.f);
+                        Text warninngCreatorMeals2(" above this quantity are not added to the meal.", font, 14);
+                        warninngCreatorMeals2.setFillColor(Color::Black);
+                        warninngCreatorMeals2.setPosition(63.f, 664.f);
+
                         while (windowCreatorMeals.isOpen())
                         {
                             Event creatorMealsEvent;
@@ -162,6 +173,8 @@ void mealsOption(Order &anOrder)
                             windowCreatorMeals.clear();
                             windowCreatorMeals.draw(backCreatorMeals);
                             menuCreatorMeals.draw(windowCreatorMeals);
+                            windowCreatorMeals.draw(warninngCreatorMeals1);
+                            windowCreatorMeals.draw(warninngCreatorMeals2);
                             windowCreatorMeals.display();
                         }
                     }

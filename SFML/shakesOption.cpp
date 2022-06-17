@@ -17,12 +17,12 @@ void shakeOption(Order& anOrder)
 {
     RenderWindow windowShakes(VideoMode(600, 800), "Shakes");// -||- dla shakes
     Menu menuShakes(windowShakes.getSize().x, windowShakes.getSize().y);//obiekt dla shakes
-    menuShakes.nazwa("Strawberry", 0);//przypisanie nazw dla menu shakes
-    menuShakes.nazwa("Vanilla", 1);
-    menuShakes.nazwa("Chocolate", 2);
-    menuShakes.nazwa("Caramel", 3);
-    menuShakes.nazwa("Blueberry", 4);
-    menuShakes.nazwa("Exit", 5);
+    menuShakes.name("Strawberry", 0);//przypisanie nazw dla menu shakes
+    menuShakes.name("Vanilla", 1);
+    menuShakes.name("Chocolate", 2);
+    menuShakes.name("Caramel", 3);
+    menuShakes.name("Blueberry", 4);
+    menuShakes.name("EXIT", 5);
     RectangleShape backShakes;//tlo dla shakes
     backShakes.setSize(Vector2f(600, 800));
     Texture imageBackShakes;

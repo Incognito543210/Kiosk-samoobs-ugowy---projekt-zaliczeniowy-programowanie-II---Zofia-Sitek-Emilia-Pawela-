@@ -18,7 +18,7 @@ Enter::Enter(float width, float height)
 	enter[1].setFont(font);
 	enter[1].setFillColor(Color::Black);
 	enter[1].setString("EXIT");
-	enter[1].setPosition(526.f, 763.f);
+	enter[1].setPosition(525.f, 761.f);
 
 	selectedItemIndex = 0;
 }

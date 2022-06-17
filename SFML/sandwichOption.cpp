@@ -17,12 +17,12 @@ void sandwichOption(Order &anOrder)
 {
     RenderWindow windowSandwich(VideoMode(600, 800), "Sandwich"); //renderowanie okna dla kanapek
     Menu menuSandwich(windowSandwich.getSize().x, windowSandwich.getSize().y);//obiekt dla kanapek
-    menuSandwich.nazwa("Beef burger", 0);//przypisanie nazw dla menu kanapki
-    menuSandwich.nazwa("Chicken burger", 1);
-    menuSandwich.nazwa("Ham&cheese sandwich", 2);
-    menuSandwich.nazwa("Tuna sandwich", 3);
-    menuSandwich.nazwa("Sandwich creator", 4);
-    menuSandwich.nazwa("Exit", 5);
+    menuSandwich.name("Beef burger", 0);//przypisanie nazw dla menu kanapki
+    menuSandwich.name("Chicken burger", 1);
+    menuSandwich.name("Ham&cheese sandwich", 2);
+    menuSandwich.name("Tuna sandwich", 3);
+    menuSandwich.name("Sandwich creator", 4);
+    menuSandwich.name("EXIT", 5);
 
     RectangleShape backSandwich;//tlo dla kanapek
     backSandwich.setSize(Vector2f(600, 800));
@@ -84,17 +84,30 @@ void sandwichOption(Order &anOrder)
 
                         RenderWindow windowCreatorSandwich(VideoMode(600, 800), "SandwichCreator");//okno dla kreatora kanapki
                         Menu menuCreatorSandwich(windowCreatorSandwich.getSize().x, windowCreatorSandwich.getSize().y);//obiekt menau dla kreatora kanapki
-                        menuCreatorSandwich.nazwa("Beef", 0);
-                        menuCreatorSandwich.nazwa("Ham", 1);
-                        menuCreatorSandwich.nazwa("Cheese", 2);
-                        menuCreatorSandwich.nazwa("Tuna", 3);
-                        menuCreatorSandwich.nazwa("Lettuce", 4);
-                        menuCreatorSandwich.nazwa("Exit", 5);
+                        menuCreatorSandwich.name("Beef", 0);
+                        menuCreatorSandwich.name("Ham", 1);
+                        menuCreatorSandwich.name("Cheese", 2);
+                        menuCreatorSandwich.name("Tuna", 3);
+                        menuCreatorSandwich.name("Lettuce", 4);
+                        menuCreatorSandwich.name("EXIT", 5);
                         RectangleShape backCreatorSandwich;//t³o dla kreatora kanapki
                         backCreatorSandwich.setSize(Vector2f(600, 800));
                         Texture imageBackCreatorSandwich;
                         imageBackCreatorSandwich.loadFromFile("kreatorwybur kanapki.png");
                         backCreatorSandwich.setTexture(&imageBackCreatorSandwich);
+
+                        Font font;
+                        font.loadFromFile("BAUHS93.ttf");
+
+
+                        Text warninngCreatorSandwich1(" Note: The maximum number of products in a sandwich is 4, products", font, 14);
+                        warninngCreatorSandwich1.setFillColor(Color::Black);
+                        warninngCreatorSandwich1.setPosition(63.f, 650.f);
+                        Text warninngCreatorSandwich2(" above this quantity are not added to the sandwich.", font, 14);
+                        warninngCreatorSandwich2.setFillColor(Color::Black);
+                        warninngCreatorSandwich2.setPosition(63.f, 664.f);
+                     
+
                         while (windowCreatorSandwich.isOpen())
                         {
                             Event creatorSandwichEvent;
@@ -165,6 +178,8 @@ void sandwichOption(Order &anOrder)
                             windowCreatorSandwich.clear();//czyszczenie okna 
                             windowCreatorSandwich.draw(backCreatorSandwich);//przypisanie t³a dla okna
                             menuCreatorSandwich.draw(windowCreatorSandwich);//przypisanie okna do obiketu menu
+                            windowCreatorSandwich.draw(warninngCreatorSandwich1);
+                            windowCreatorSandwich.draw(warninngCreatorSandwich2);
                             windowCreatorSandwich.display();
 
 

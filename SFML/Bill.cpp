@@ -10,18 +10,19 @@ classBill::classBill(float width, float height, Order &anOrder)
 
 	enter[0].setFont(font);
 	enter[0].setFillColor(Color::Red);
-	enter[0].setString("Pay");
-	enter[0].setPosition(240.f, 750.f);
+	enter[0].setString("PAY");
+	enter[0].setPosition(375.f, 761.f);
 
 	enter[1].setFont(font);
 	enter[1].setFillColor(Color::Black);
-	enter[1].setString("usun");
-	enter[1].setPosition(340.f, 750.f);
+	enter[1].setString("REMOVE");
+	enter[1].setCharacterSize(20);
+	enter[1].setPosition(443.f, 767.f);
 
 	enter[2].setFont(font);
 	enter[2].setFillColor(Color::Black);
-	enter[2].setString("Exit");
-	enter[2].setPosition(500.f, 750.f);
+	enter[2].setString("EXIT");
+	enter[2].setPosition(525.f, 761.f);
 
 	for (int i = 3; i < 11; i++)
 	{
@@ -34,8 +35,8 @@ classBill::classBill(float width, float height, Order &anOrder)
 	orderSum = anOrder.sum;
 	enter[11].setFont(font);
 	enter[11].setFillColor(Color::Black);
-	enter[11].setString("Total: "+string(orderSum));
-	enter[11].setPosition(350.f, 600.f);
+	enter[11].setString("Total: "+orderSum);
+	enter[11].setPosition(350.f, 700.f);
 
 	selectedItemIndex = 0;
 }
@@ -54,7 +55,7 @@ void classBill::MoveLeft()
 {
 	if (selectedItemIndex - 1 >= 0)
 	{
-		enter[selectedItemIndex].setFillColor(Color::White);
+		enter[selectedItemIndex].setFillColor(Color::Black);
 		selectedItemIndex--;
 		enter[selectedItemIndex].setFillColor(Color::Red);
 	}
@@ -63,7 +64,7 @@ void classBill::MoveRight()
 {
 	if (selectedItemIndex + 1 < 3)
 	{
-		enter[selectedItemIndex].setFillColor(Color::White);
+		enter[selectedItemIndex].setFillColor(Color::Black);
 		selectedItemIndex++;
 		enter[selectedItemIndex].setFillColor(Color::Red);
 	}

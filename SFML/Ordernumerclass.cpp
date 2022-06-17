@@ -9,7 +9,7 @@ Ordernumerclass::Ordernumerclass(float width, float height)
 	enter[0].setFont(font);
 	enter[0].setFillColor(Color::Black);
 	enter[0].setString("EXIT");
-	enter[0].setPosition(505.f, 752.f);
+	enter[0].setPosition(525.f, 761.f);
 
 	selectedItemIndex = 0;
 }
