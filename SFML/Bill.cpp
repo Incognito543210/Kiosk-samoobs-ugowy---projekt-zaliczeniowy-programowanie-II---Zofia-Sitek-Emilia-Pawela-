@@ -6,7 +6,6 @@ classBill::classBill(float width, float height, Order &anOrder)
 	{
 		//handle error
 	}
-	orderSum = "0";
 
 	enter[0].setFont(font);
 	enter[0].setFillColor(Color::Red);
@@ -32,10 +31,10 @@ classBill::classBill(float width, float height, Order &anOrder)
 		enter[i].setString(anOrder.orderTab[i-3]);
 		enter[i].setPosition(40.f, 200.f+(i-3)*50.f);
 	}
-	orderSum = anOrder.sum;
+
 	enter[11].setFont(font);
 	enter[11].setFillColor(Color::Black);
-	enter[11].setString("Total: "+orderSum);
+	enter[11].setString("Total: "+to_string(anOrder.sum));
 	enter[11].setPosition(350.f, 700.f);
 
 	selectedItemIndex = 0;

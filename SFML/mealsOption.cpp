@@ -149,7 +149,7 @@ void mealsOption(Order &anOrder)
                                         }
                                         if (x == 1)
                                         {
-                                            anOrder.partOfMealName = "Ham&cheese sandwich";
+                                            anOrder.partOfMealName = "Ham&cheese";
                                             anOrder.addToMeal(anOrder.partOfMealName);
                                         }
                                         if (x == 2)

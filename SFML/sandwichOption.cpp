@@ -79,7 +79,7 @@ void sandwichOption(Order &anOrder)
                     }
                     if (x == 2)
                     {
-                        anOrder.productName = "Ham&cheese sandwich";
+                        anOrder.productName = "Ham&cheese";
                         anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 3)
