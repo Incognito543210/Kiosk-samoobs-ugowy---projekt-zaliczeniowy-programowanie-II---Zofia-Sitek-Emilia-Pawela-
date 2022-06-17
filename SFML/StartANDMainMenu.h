@@ -12,6 +12,8 @@
 #include "shakesOption.h"
 #include "mealsOption.h"
 #include "AnOrder.h"
+#include<cstdlib>
+#include<ctime>
 
 
 using namespace sf;

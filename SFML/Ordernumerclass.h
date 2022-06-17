@@ -9,6 +9,7 @@ class Ordernumerclass
 {
 private:
 	int selectedItemIndex;
+	int orderNumber;
 	Font font;
 	Text enter[MAX_NUMBER_OF_ITEMS];
 public:

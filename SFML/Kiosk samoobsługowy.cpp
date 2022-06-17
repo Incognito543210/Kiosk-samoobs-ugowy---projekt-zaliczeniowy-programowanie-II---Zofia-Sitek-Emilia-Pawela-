@@ -22,8 +22,8 @@ using namespace std;
 
 int main()
 {
+    srand(time(NULL));
     Order yourOrder;
-    cout << yourOrder.productNumber << endl;
     startAndMainMenu(yourOrder);
     
     return 0;
