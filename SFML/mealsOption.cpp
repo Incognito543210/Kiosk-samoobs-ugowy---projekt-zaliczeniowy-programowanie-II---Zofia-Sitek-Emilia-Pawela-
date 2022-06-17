@@ -13,6 +13,13 @@
 
 void mealsOption(Order &anOrder)
 {
+    Font font;
+    font.loadFromFile("BAUHS93.ttf");
+
+    Text noteMeals(" Note: Press ENTER to add a product to the order.", font, 18);
+    noteMeals.setFillColor(Color::Black);
+    noteMeals.setPosition(57.f, 730.f);
+
     RenderWindow windowMeals(VideoMode(600, 800), "Meals");// -||- dla MEals
     Menu menuMeals(windowMeals.getSize().x, windowMeals.getSize().y);//obiekt dla Meals
     menuMeals.name("Beef+Chips+Blueberry", 0);//przypisanie nazw dla menu Meals
@@ -94,8 +101,7 @@ void mealsOption(Order &anOrder)
                         imageBackCreatorMeals.loadFromFile("mealcreator.png");
                         backCreatorMeals.setTexture(&imageBackCreatorMeals);
 
-                        Font font;
-                        font.loadFromFile("BAUHS93.ttf");
+       
 
                         Text warninngCreatorMeals1(" Note: The maximum number of products in a meal is 3, products", font, 14);
                         warninngCreatorMeals1.setFillColor(Color::Black);
@@ -189,6 +195,7 @@ void mealsOption(Order &anOrder)
         windowMeals.clear();
         windowMeals.draw(backMeals);
         menuMeals.draw(windowMeals);
+        windowMeals.draw(noteMeals);
         windowMeals.display();
     }
 }

@@ -15,6 +15,15 @@ using namespace std;
 
 void shakeOption(Order& anOrder)
 {
+
+    Font font;
+    font.loadFromFile("BAUHS93.ttf");
+
+    Text noteShakes(" Note: Press ENTER to add a product to the order.", font, 18);
+    noteShakes.setFillColor(Color::Black);
+    noteShakes.setPosition(57.f, 730.f);
+
+    
     RenderWindow windowShakes(VideoMode(600, 800), "Shakes");// -||- dla shakes
     Menu menuShakes(windowShakes.getSize().x, windowShakes.getSize().y);//obiekt dla shakes
     menuShakes.name("Strawberry", 0);//przypisanie nazw dla menu shakes
@@ -107,6 +116,7 @@ void shakeOption(Order& anOrder)
         windowShakes.clear();
         windowShakes.draw(backShakes);
         menuShakes.draw(windowShakes);
+        windowShakes.draw(noteShakes);
         windowShakes.display();
     }
 

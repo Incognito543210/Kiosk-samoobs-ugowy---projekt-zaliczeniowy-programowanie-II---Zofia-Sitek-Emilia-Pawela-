@@ -14,6 +14,13 @@
 void sidesOption(Order &anOrder)
 {
 
+    Font font;
+    font.loadFromFile("BAUHS93.ttf");
+
+    Text noteSides(" Note: Press ENTER to add a product to the order.", font, 18);
+    noteSides.setFillColor(Color::Black);
+    noteSides.setPosition(57.f, 730.f);
+
     RenderWindow windowSides(VideoMode(600, 800), "Sides");// -||- dla Sides
     Menu menuSides(windowSides.getSize().x, windowSides.getSize().y);//obiekt dla sides
     menuSides.name("Chips", 0);//przypisanie nazw dla menu sides
@@ -107,6 +114,7 @@ void sidesOption(Order &anOrder)
         windowSides.clear();
         windowSides.draw(backSides);
         menuSides.draw(windowSides);
+        windowSides.draw(noteSides);
         windowSides.display();
 
 
