@@ -25,8 +25,8 @@ Order::Order()
 	productName = "";
 	ingredientName = "";
 	partOfMealName = "";
-	isSandwich = 0;
-	isMeal = 0;
+	sandwichIngredients = "";
+	mealIngredients = "";
 }
 
 void Order::showOrder()
@@ -46,10 +46,6 @@ void Order::addToOrder(string text)
 
 void Order::addToSandwich(string text)
 {
-	if (isSandwich == 1)
-	{
-		addToOrder("Sandwich");
-	}
 	if (sandwichCreatorCounter <= 3)
 	{
 		sandwichTab[sandwichCreatorCounter] = text;
@@ -58,14 +54,51 @@ void Order::addToSandwich(string text)
 	}
 }
 
+void Order::addSandwich()
+{
+	if (sandwichCreatorCounter > 0)
+	{
+		for (int i = 0; i <= 3; i++)
+		{
+			sandwichIngredients += sandwichTab[i] + " ";
+		}
+		addToOrder("Sandwich " + sandwichIngredients);
+		//czyszczenie elementów kanapki
+		sandwichCreatorCounter = 0;
+		sandwichIngredients = "";
+		for (int i = 0; i <= 3; i++)
+		{
+			sandwichTab[i] = "";
+		}
+	}	
+}
+
 void Order::addToMeal(string text)
 {
-	addToOrder("Meal");
 	if (mealCreatorCounter <= 2)
 	{
 		mealTab[mealCreatorCounter] = text;
 		mealCreatorCounter++;
 		cout << mealCreatorCounter << " " << text << endl;
+	}
+}
+
+void Order::addMeal()
+{
+	if (mealCreatorCounter > 0)
+	{
+		for (int i = 0; i <= 2; i++)
+		{
+			mealIngredients += mealTab[i] + " ";
+		}
+		addToOrder("Meal " + mealIngredients);
+		//czyszczenie elementow posilku
+		mealCreatorCounter = 0;
+		mealIngredients = "";
+		for (int i = 0; i <= 2; i++)
+		{
+			mealTab[i] = "";
+		}
 	}
 }
 

@@ -152,6 +152,7 @@ void mealsOption(Order &anOrder)
                                         }
                                         if (x == 5)
                                         {
+                                            anOrder.addMeal();
                                             windowCreatorMeals.close();
                                             break;
                                         }

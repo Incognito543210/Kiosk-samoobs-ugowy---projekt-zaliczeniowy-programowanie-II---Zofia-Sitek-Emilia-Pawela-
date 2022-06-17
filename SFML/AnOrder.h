@@ -19,11 +19,13 @@ public:
 	string productName;
 	void addToOrder(string text);
 	string ingredientName;
+	string sandwichIngredients;
 	void addToSandwich(string text);
+	void addSandwich();
 	string partOfMealName;
+	string mealIngredients;
 	void addToMeal(string text);
-	int isSandwich;
-	int isMeal;
+	void addMeal();
 
 	Order();
 	~Order();
