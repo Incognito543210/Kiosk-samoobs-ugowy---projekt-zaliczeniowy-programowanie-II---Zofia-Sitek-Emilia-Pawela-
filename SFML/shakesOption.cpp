@@ -78,27 +78,27 @@ void shakeOption(Order& anOrder)
                     if (x == 0)
                     {
                         anOrder.productName = "Strawberry shake";
-                        anOrder.addToOrder(anOrder.productName);                    
+                        anOrder.addToOrder(anOrder.productName,3);                    
                     }
                     if (x == 1)
                     {
                         anOrder.productName = "Vanilla shake";
-                        anOrder.addToOrder(anOrder.productName);                    
+                        anOrder.addToOrder(anOrder.productName,3);                    
                     }
                     if (x == 2)
                     {
                         anOrder.productName = "Chocolate shake";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,3);
                     }
                     if (x == 3)
                     {
                         anOrder.productName = "Caramel shake";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,3);
                     }
                     if (x == 4)
                     {
                         anOrder.productName = "Blueberry shake";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,3);
                     }
                     if (x == 5)
                     {

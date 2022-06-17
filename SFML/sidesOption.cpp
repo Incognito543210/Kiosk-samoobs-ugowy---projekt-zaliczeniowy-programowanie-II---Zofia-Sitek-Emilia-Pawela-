@@ -76,27 +76,27 @@ void sidesOption(Order &anOrder)
                     if (x == 0)
                     {
                         anOrder.productName = "Chips";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,2);
                     }
                     if (x == 1)
                     {
                         anOrder.productName = "Salad";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,2);
                     }
                     if (x == 2)
                     {
                         anOrder.productName = "Ketchup";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,1);
                     }
                     if (x == 3)
                     {
                         anOrder.productName = "KentuckyGold dip";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,1);
                     }
                     if (x == 4)
                     {
                         anOrder.productName = "Garlic dip";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,1);
                     }
                     if (x == 5)
                     {

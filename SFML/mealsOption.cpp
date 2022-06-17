@@ -66,22 +66,22 @@ void mealsOption(Order &anOrder)
                     if (x == 0)
                     {
                         anOrder.productName = "Beef+Chips+Bberry";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,10);
                     }
                     if (x == 1)
                     {
                         anOrder.productName = "Ham+Chips+Sberry";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,10);
                     }
                     if (x == 2)
                     {
                         anOrder.productName = "Tuna+Salad+Choco";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,10);
                     }
                     if (x == 3)
                     {
                         anOrder.productName = "Student Meal";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,5);
                     }
 
                     if (x == 4)
@@ -90,7 +90,7 @@ void mealsOption(Order &anOrder)
                         RenderWindow windowCreatorMeals(VideoMode(600, 800), "MealCreator");//okno dla kreatora Meals
                         Menu menuCreatorMeals(windowCreatorMeals.getSize().x, windowCreatorMeals.getSize().y);//obiekt menau dla kreatora melas
                         menuCreatorMeals.name("Beef burger", 0);
-                        menuCreatorMeals.name("Ham&cheese sandwich", 1);
+                        menuCreatorMeals.name("Ham&cheese", 1);
                         menuCreatorMeals.name("Chips", 2);
                         menuCreatorMeals.name("Salad", 3);
                         menuCreatorMeals.name("Garlic dip", 4);

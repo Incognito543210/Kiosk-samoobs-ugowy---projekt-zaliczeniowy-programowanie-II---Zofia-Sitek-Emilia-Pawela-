@@ -10,6 +10,7 @@ public:
 	int sum;
 	int productNumber;
 	string orderTab[8];
+	int orderPrices[8];
 	int showOrderCounter;
 	string showOrderText;
 	string sandwichTab[4];
@@ -17,7 +18,7 @@ public:
 	string mealTab[3];
 	int mealCreatorCounter;
 	string productName;
-	void addToOrder(string text);
+	void addToOrder(string text, int price);
 	string ingredientName;
 	string sandwichIngredients;
 	void addToSandwich(string text);

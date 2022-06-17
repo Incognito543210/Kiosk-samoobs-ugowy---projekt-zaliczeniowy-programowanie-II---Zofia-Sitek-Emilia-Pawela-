@@ -69,23 +69,23 @@ void sandwichOption(Order &anOrder)
                     //wybór kanapek w menu
                     if (x == 0)
                     {
-                        anOrder.productName = "Beef burger";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.productName = "Beef burger";                   
+                        anOrder.addToOrder(anOrder.productName,4);
                     }
                     if (x == 1)
                     {
                         anOrder.productName = "Chicken burger";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,4);
                     }
                     if (x == 2)
                     {
                         anOrder.productName = "Ham&cheese";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,3);
                     }
                     if (x == 3)
                     {
                         anOrder.productName = "Tuna sandwich";
-                        anOrder.addToOrder(anOrder.productName);
+                        anOrder.addToOrder(anOrder.productName,2);
                     }
 
                     if (x == 4)//kreator kanapki

@@ -12,6 +12,7 @@ Order::Order()
 	for (int i = 0; i <= 7; i++)
 	{
 		orderTab[i] = "";
+		orderPrices[i] = 0;
 	}
 	for (int i = 0; i <= 3; i++)
 	{
@@ -30,13 +31,15 @@ Order::Order()
 	mealIngredients = "";
 }
 
-void Order::addToOrder(string text)
+void Order::addToOrder(string text, int price)
 {
 	if (productNumber <= 7)
 	{
 		orderTab[productNumber] = text;
+		orderPrices[productNumber] = price;
 		productNumber++;
 		cout << productNumber << " " << text << endl;
+		sum += price;
 	}
 }
 
@@ -58,7 +61,7 @@ void Order::addSandwich()
 		{
 			sandwichIngredients += sandwichTab[i] + " ";
 		}
-		addToOrder("Sandwich " + sandwichIngredients);
+		addToOrder("Sandwich " + sandwichIngredients, 4);
 		//czyszczenie elementów kanapki
 		sandwichCreatorCounter = 0;
 		sandwichIngredients = "";
@@ -87,7 +90,7 @@ void Order::addMeal()
 		{
 			mealIngredients += mealTab[i] + " ";
 		}
-		addToOrder("Meal " + mealIngredients);
+		addToOrder("Meal " + mealIngredients, 10);
 		//czyszczenie elementow posilku
 		mealCreatorCounter = 0;
 		mealIngredients = "";
@@ -101,11 +104,14 @@ void Order::addMeal()
 void Order::removeFromOrder(int numberOfProduct)
 {
 	orderTab[numberOfProduct] = "";
+	sum -= orderPrices[numberOfProduct];
+	orderPrices[numberOfProduct] = 0;
 	productNumber--;
 }
 
 void Order::upgradeOrder()
 {
+	//tabela produktów
 	for (int i = 0; i <= 6; i++)
 	{
 		if (orderTab[i] == "")
@@ -116,6 +122,22 @@ void Order::upgradeOrder()
 				{
 					orderTab[i] = orderTab[j];
 					orderTab[j] = "";
+					break;
+				}
+			}
+		}
+	}
+	//tabela cen
+	for (int i = 0; i <= 6; i++)
+	{
+		if (orderPrices[i] == 0)
+		{
+			for (int j = i + 1; j <= 7; j++)
+			{
+				if (orderPrices[j] != 0)
+				{
+					orderPrices[i] = orderPrices[j];
+					orderPrices[j] = 0;
 					break;
 				}
 			}
