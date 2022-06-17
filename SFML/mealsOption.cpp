@@ -22,9 +22,9 @@ void mealsOption(Order &anOrder)
 
     RenderWindow windowMeals(VideoMode(600, 800), "Meals");// -||- dla MEals
     Menu menuMeals(windowMeals.getSize().x, windowMeals.getSize().y);//obiekt dla Meals
-    menuMeals.name("Beef+Chips+Blueberry", 0);//przypisanie nazw dla menu Meals
-    menuMeals.name("Ham+Chips+Strawberry", 1);
-    menuMeals.name("Tuna+Salad+Chocolate", 2);
+    menuMeals.name("Beef+Chips+Bberry", 0);//przypisanie nazw dla menu Meals
+    menuMeals.name("Ham+Chips+Sberry", 1);
+    menuMeals.name("Tuna+Salad+Choco", 2);
     menuMeals.name("Student Meal", 3);
     menuMeals.name("Create your meal", 4);
     menuMeals.name("EXIT", 5);
@@ -65,17 +65,17 @@ void mealsOption(Order &anOrder)
                     //opcje dla zestawow
                     if (x == 0)
                     {
-                        anOrder.productName = "Beef+Chips+Blueberry";
+                        anOrder.productName = "Beef+Chips+Bberry";
                         anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 1)
                     {
-                        anOrder.productName = "Ham+Chips+Strawberry";
+                        anOrder.productName = "Ham+Chips+Sberry";
                         anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 2)
                     {
-                        anOrder.productName = "Tuna+Salad+Chocolate";
+                        anOrder.productName = "Tuna+Salad+Choco";
                         anOrder.addToOrder(anOrder.productName);
                     }
                     if (x == 3)

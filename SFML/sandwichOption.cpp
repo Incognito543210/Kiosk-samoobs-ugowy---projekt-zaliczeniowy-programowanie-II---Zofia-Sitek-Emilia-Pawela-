@@ -26,10 +26,10 @@ void sandwichOption(Order &anOrder)
     
     RenderWindow windowSandwich(VideoMode(600, 800), "Sandwich"); //renderowanie okna dla kanapek
     Menu menuSandwich(windowSandwich.getSize().x, windowSandwich.getSize().y);//obiekt dla kanapek
-    menuSandwich.name("Beef burger", 0);//przypisanie nazw dla menu kanapki
-    menuSandwich.name("Chicken burger", 1);
-    menuSandwich.name("Ham&cheese sandwich", 2);
-    menuSandwich.name("Tuna sandwich", 3);
+    menuSandwich.name("Beef burger 4$", 0);//przypisanie nazw dla menu kanapki
+    menuSandwich.name("Chicken burger 4$", 1);
+    menuSandwich.name("Ham&cheese 3$", 2);
+    menuSandwich.name("Tuna sandwich 2$", 3);
     menuSandwich.name("Sandwich creator", 4);
     menuSandwich.name("EXIT", 5);
 
