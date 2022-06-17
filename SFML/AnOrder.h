@@ -26,8 +26,8 @@ public:
 	string mealIngredients;
 	void addToMeal(string text);
 	void addMeal();
-	void removeFromOrder();
-	void showOrder();
+	void removeFromOrder(int numberOfProduct);
+	void upgradeOrder();
 
 	Order();
 	~Order();

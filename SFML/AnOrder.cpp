@@ -98,14 +98,29 @@ void Order::addMeal()
 	}
 }
 
-void Order::showOrder()
+void Order::removeFromOrder(int numberOfProduct)
 {
-
+	orderTab[numberOfProduct] = "";
+	productNumber--;
 }
 
-void Order::removeFromOrder()
+void Order::upgradeOrder()
 {
-
+	for (int i = 0; i <= 6; i++)
+	{
+		if (orderTab[i] == "")
+		{
+			for (int j = i+1; j <= 7; j++)
+			{
+				if (orderTab[j] != "")
+				{
+					orderTab[i] = orderTab[j];
+					orderTab[j] = "";
+					break;
+				}
+			}
+		}
+	}
 }
 
 Order::~Order()

@@ -1,7 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-
 //klasa dla menu, kanapek, shake itp oraz kreatorow
 #define MAX_NUMBER_OF_ITEMS 9
 

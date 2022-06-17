@@ -276,38 +276,39 @@ void startAndMainMenu(Order& anOrder)
 
                                                                                 if (x == 0)
                                                                                 {
-
+                                                                                    anOrder.removeFromOrder(0);
                                                                                 }
                                                                                 if (x == 1)
                                                                                 {
-
+                                                                                    anOrder.removeFromOrder(1);
                                                                                 }
                                                                                 if (x == 2)
                                                                                 {
-
+                                                                                    anOrder.removeFromOrder(2);
                                                                                 }
                                                                                 if (x == 3)
                                                                                 {
-
+                                                                                    anOrder.removeFromOrder(3);
                                                                                 }
                                                                                 if (x == 4)
                                                                                 {
-
+                                                                                    anOrder.removeFromOrder(4);
                                                                                 }
                                                                                 if (x == 5)
                                                                                 {
-
+                                                                                    anOrder.removeFromOrder(5);
                                                                                 }
                                                                                 if (x == 6)
                                                                                 {
-
+                                                                                    anOrder.removeFromOrder(6);
                                                                                 }
                                                                                 if (x == 7)
                                                                                 {
-
+                                                                                    anOrder.removeFromOrder(7);
                                                                                 }
                                                                                 if (x == 8)//opcja exit
                                                                                 {
+                                                                                    anOrder.upgradeOrder();
                                                                                     windowDeletingOrder.close();
                                                                                     break;
                                                                                 }

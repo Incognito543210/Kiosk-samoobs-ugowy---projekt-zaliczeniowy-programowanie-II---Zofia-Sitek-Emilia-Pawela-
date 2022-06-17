@@ -53,11 +53,6 @@ DeletingOrder::DeletingOrder(float width, float height)
 	menu[8].setFillColor(Color::Black);
 	menu[8].setString("EXIT");
 	menu[8].setPosition(526.f, 763.f);
-
-
-
-
-
 	selectedItemIndex = 0;
 }
 
@@ -67,7 +62,6 @@ DeletingOrder::~DeletingOrder()
 void DeletingOrder::nazwa(string naz, int k)
 {
 	menu[k].setString(naz);
-
 }
 
 void DeletingOrder::draw(RenderWindow& window)
@@ -76,12 +70,8 @@ void DeletingOrder::draw(RenderWindow& window)
 	for (int i = 0; i < MAX_NUMBER_OF_ITEMS; i++)
 	{
 		window.draw(menu[i]);
-
 	}
-
-
 }
-
 
 void DeletingOrder::MoveUp()
 {
@@ -90,10 +80,7 @@ void DeletingOrder::MoveUp()
 		menu[selectedItemIndex].setFillColor(Color::Black);
 		selectedItemIndex--;
 		menu[selectedItemIndex].setFillColor(Color::Red);
-
 	}
-
-
 }
 
 void DeletingOrder::MoveDown()
@@ -105,8 +92,6 @@ void DeletingOrder::MoveDown()
 		menu[selectedItemIndex].setFillColor(Color::Red);
 
 	}
-
-
 }
 
 
