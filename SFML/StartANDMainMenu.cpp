@@ -197,42 +197,45 @@ void startAndMainMenu(Order& anOrder)
 
                                                             if (x == 0)//opcja zaplac
                                                             {
-                                                                windowMainMenu.close();
-                                                                windowBill.close();
-                                                                while (windowNumerOrder.isOpen())
+                                                                if (anOrder.sum != 0)
                                                                 {
-                                                                    Event numerOrderEvent;
-                                                                    while (windowNumerOrder.pollEvent(numerOrderEvent))
+                                                                    windowMainMenu.close();
+                                                                    windowBill.close();
+                                                                    while (windowNumerOrder.isOpen())
                                                                     {
-                                                                        if (numerOrderEvent.type == Event::Closed)
+                                                                        Event numerOrderEvent;
+                                                                        while (windowNumerOrder.pollEvent(numerOrderEvent))
                                                                         {
-                                                                            windowNumerOrder.close();
-                                                                        }
-                                                                        if (numerOrderEvent.type == Event::KeyPressed)
-                                                                        {
-                                                                            if (numerOrderEvent.key.code == Keyboard::Escape)
+                                                                            if (numerOrderEvent.type == Event::Closed)
                                                                             {
                                                                                 windowNumerOrder.close();
                                                                             }
-                                                                        }
-                                                                        if (numerOrderEvent.type == Event::KeyReleased)
-                                                                        {
-                                                                            if (numerOrderEvent.key.code == Keyboard::Return)
+                                                                            if (numerOrderEvent.type == Event::KeyPressed)
                                                                             {
-                                                                                int x = menuNumerOrder.GetPressedItem();
-                                                                                if (x == 0)//opcja exit
+                                                                                if (numerOrderEvent.key.code == Keyboard::Escape)
                                                                                 {
                                                                                     windowNumerOrder.close();
-                                                                                    break;
+                                                                                }
+                                                                            }
+                                                                            if (numerOrderEvent.type == Event::KeyReleased)
+                                                                            {
+                                                                                if (numerOrderEvent.key.code == Keyboard::Return)
+                                                                                {
+                                                                                    int x = menuNumerOrder.GetPressedItem();
+                                                                                    if (x == 0)//opcja exit
+                                                                                    {
+                                                                                        windowNumerOrder.close();
+                                                                                        break;
+                                                                                    }
                                                                                 }
                                                                             }
                                                                         }
+                                                                        windowDeletingOrder.close();
+                                                                        windowNumerOrder.clear();
+                                                                        windowNumerOrder.draw(backNumerOrder);
+                                                                        menuNumerOrder.draw(windowNumerOrder);
+                                                                        windowNumerOrder.display();
                                                                     }
-                                                                    windowDeletingOrder.close();
-                                                                    windowNumerOrder.clear();
-                                                                    windowNumerOrder.draw(backNumerOrder);
-                                                                    menuNumerOrder.draw(windowNumerOrder);
-                                                                    windowNumerOrder.display();
                                                                 }
                                                             }
                                                             if (x == 1)//opcja usun
