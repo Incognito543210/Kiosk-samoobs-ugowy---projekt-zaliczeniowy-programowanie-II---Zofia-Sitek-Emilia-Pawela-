@@ -1,9 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "AnOrder.h"
 
 //klasa dla menu przy wybraniu opcji bill
 
-#define MAX_NUMBER_OF_ITEMS 3
 using namespace std;
 using namespace sf;
 
@@ -12,10 +12,10 @@ class classBill
 private:
 	int selectedItemIndex;
 	Font font;
-	Text enter[MAX_NUMBER_OF_ITEMS];
+	Text enter[12];
 public:
-
-	classBill(float width, float height);
+	string orderSum;
+	classBill(float width, float height, Order &anOrder);
 	~classBill();
 	void MoveLeft();
 	void MoveRight();

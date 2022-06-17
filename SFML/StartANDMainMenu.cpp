@@ -113,7 +113,7 @@ void startAndMainMenu(Order& anOrder)
                                         int x = menuMainMenu.GetPressedItem();
 
                                         RenderWindow windowBill(VideoMode(600, 800), "Bill");// -||- dla rachunku
-                                        classBill menuBill(windowBill.getSize().x, windowBill.getSize().y);//obiekt dla rachunku
+                                        classBill menuBill(windowBill.getSize().x, windowBill.getSize().y,anOrder);//obiekt dla rachunku
                                         RectangleShape backBill;//t³o dla srachunku
                                         backBill.setSize(Vector2f(600, 800));
                                         Texture imageBackBill;
@@ -125,22 +125,17 @@ void startAndMainMenu(Order& anOrder)
                                         {
                                             sandwichOption(anOrder);
                                         }
-                                        if (x == 1)
+                                        if (x == 1)//opcja koktajle
                                         {
                                             shakeOption(anOrder);
                                         }
-
-                                        if (x == 2)
+                                        if (x == 2)//opcja dodatki
                                         {
                                             sidesOption(anOrder);
-
-                                        }//opcja dodatki
-
-                                        if (x == 3)//opcja zestwy
+                                        }
+                                        if (x == 3)//opcja zestawy
                                         {
                                             mealsOption(anOrder);
-
-
                                         }
 
                                         if (x == 4)//opcja rachunek
@@ -177,7 +172,6 @@ void startAndMainMenu(Order& anOrder)
                                                         {
                                                             menuBill.MoveRight();
                                                             break;
-
                                                         }
 
                                                         if (billEvent.key.code == Keyboard::Return)
@@ -223,8 +217,6 @@ void startAndMainMenu(Order& anOrder)
                                                                         }
                                                                         if (numerOrderEvent.type == Event::KeyReleased)
                                                                         {
-
-
                                                                             if (numerOrderEvent.key.code == Keyboard::Return)
                                                                             {
                                                                                 int x = menuNumerOrder.GetPressedItem();
@@ -233,10 +225,7 @@ void startAndMainMenu(Order& anOrder)
                                                                                     windowNumerOrder.close();
                                                                                     break;
                                                                                 }
-
                                                                             }
-
-
                                                                         }
                                                                     }
                                                                     windowDeletingOrder.close();
@@ -244,17 +233,11 @@ void startAndMainMenu(Order& anOrder)
                                                                     windowNumerOrder.draw(backNumerOrder);
                                                                     menuNumerOrder.draw(windowNumerOrder);
                                                                     windowNumerOrder.display();
-
-
-
                                                                 }
-
                                                             }
                                                             if (x == 1)//opcja usun
                                                             {
                                                                 windowBill.close();
-
-
 
                                                                 while (windowDeletingOrder.isOpen())
                                                                 {
@@ -295,7 +278,6 @@ void startAndMainMenu(Order& anOrder)
                                                                                 {
 
                                                                                 }
-
                                                                                 if (x == 1)
                                                                                 {
 
@@ -316,8 +298,6 @@ void startAndMainMenu(Order& anOrder)
                                                                                 {
 
                                                                                 }
-
-
                                                                                 if (x == 6)
                                                                                 {
 
@@ -326,16 +306,12 @@ void startAndMainMenu(Order& anOrder)
                                                                                 {
 
                                                                                 }
-
                                                                                 if (x == 8)//opcja exit
                                                                                 {
                                                                                     windowDeletingOrder.close();
                                                                                     break;
                                                                                 }
-
                                                                             }
-
-
                                                                         }
                                                                     }
                                                                     windowNumerOrder.close();
@@ -343,11 +319,7 @@ void startAndMainMenu(Order& anOrder)
                                                                     windowDeletingOrder.draw(backDeletingOrder);
                                                                     menuDeletingOrder.draw(windowDeletingOrder);
                                                                     windowDeletingOrder.display();
-
-
-
                                                                 }
-
                                                             }
                                                             if (x == 2)//opcja exit
                                                             {
@@ -355,26 +327,16 @@ void startAndMainMenu(Order& anOrder)
                                                                 break;
                                                             }
                                                         }
-
                                                     }
-
-
                                                 }
-
-
-
                                                 windowBill.clear();
                                                 windowBill.draw(backBill);
                                                 menuBill.draw(windowBill);
                                                 windowBill.display();
                                             }
-
                                         }
-
                                         if (x == 5)//zamyka okno menu- guzik exit
-                                        {
-
-                           
+                                        {                           
                                             RenderWindow windowExitSure(VideoMode(600, 800), "ExitSure");// renederowanie okna dla upewnienia
                                             ExitSure menuExitSure(windowExitSure.getSize().x, windowExitSure.getSize().y);//obiekt dla upewnienia
                                             RectangleShape backExitSure;//t³o dla okna upewnienia
@@ -429,27 +391,18 @@ void startAndMainMenu(Order& anOrder)
                                                                
                                                                 windowExitSure.close();
  
-                                                            }
-                                                         
+                                                            }                                                      
 
                                                         }
-
-
                                                     }
-                                                }
-                                              
+                                                }                                              
                                                 windowExitSure.clear();
                                                 windowExitSure.draw(backExitSure);
                                                 menuExitSure.draw(windowExitSure);
                                                 windowExitSure.display();
 
-
-
-                                            }
-                                          
+                                            }                                          
                                         }
-
-
                                     }
                                 }
                                 windowMainMenu.clear();
@@ -458,8 +411,6 @@ void startAndMainMenu(Order& anOrder)
                                 windowMainMenu.display();
                             }
                         }
-
-
                     }
                     if (x == 1)//exit dla okna startu
                     {
@@ -470,7 +421,6 @@ void startAndMainMenu(Order& anOrder)
 
             }
         }
-
         windowStart.clear();//czyszczenie okna
         windowStart.draw(backStart);//wyswietalnie t³a dla enter
         windowStart.draw(warninng1);
@@ -479,6 +429,4 @@ void startAndMainMenu(Order& anOrder)
         menuStart.draw(windowStart);
         windowStart.display();
     }
-
-
 }

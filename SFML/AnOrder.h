@@ -7,6 +7,7 @@ using namespace std;
 class Order
 {
 public:
+	int sum;
 	int productNumber;
 	string orderTab[8];
 	int showOrderCounter;
@@ -15,7 +16,6 @@ public:
 	int sandwichCreatorCounter;
 	string mealTab[3];
 	int mealCreatorCounter;
-	void showOrder();
 	string productName;
 	void addToOrder(string text);
 	string ingredientName;
@@ -26,6 +26,8 @@ public:
 	string mealIngredients;
 	void addToMeal(string text);
 	void addMeal();
+	void removeFromOrder();
+	void showOrder();
 
 	Order();
 	~Order();

@@ -5,6 +5,7 @@ using namespace std;
 
 Order::Order()
 {
+	sum = 0;
 	productNumber = 0;
 	showOrderCounter = 0;
 	string showOrderText = "";
@@ -27,11 +28,6 @@ Order::Order()
 	partOfMealName = "";
 	sandwichIngredients = "";
 	mealIngredients = "";
-}
-
-void Order::showOrder()
-{
-
 }
 
 void Order::addToOrder(string text)
@@ -100,6 +96,16 @@ void Order::addMeal()
 			mealTab[i] = "";
 		}
 	}
+}
+
+void Order::showOrder()
+{
+
+}
+
+void Order::removeFromOrder()
+{
+
 }
 
 Order::~Order()
