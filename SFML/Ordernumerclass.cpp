@@ -14,10 +14,10 @@ Ordernumerclass::Ordernumerclass(float width, float height)
 	orderNumber = rand()%50 + 10;
 
 	enter[1].setFont(font);
-	enter[1].setCharacterSize(80);
+	enter[1].setCharacterSize(100);
 	enter[1].setFillColor(Color::Black);
 	enter[1].setString(to_string(orderNumber));
-	enter[1].setPosition(250.f, 250.f);
+	enter[1].setPosition(235.f, 230.f);
 
 	selectedItemIndex = 0;
 }
