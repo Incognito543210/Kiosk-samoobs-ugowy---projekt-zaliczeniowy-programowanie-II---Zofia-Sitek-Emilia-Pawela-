@@ -13,6 +13,7 @@
 #include "StartANDMainMenu.h"
 #include "ExitSure.h"
 #include "AnOrder.h"
+#include <Windows.h>
 
 using namespace sf;
 using namespace std;
@@ -22,6 +23,7 @@ using namespace std;
 
 int main()
 {
+    FreeConsole();
     srand(time(NULL));
     Order yourOrder;
     startAndMainMenu(yourOrder);
