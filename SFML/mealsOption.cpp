@@ -26,7 +26,7 @@ void mealsOption(Order &anOrder)
     menuMeals.name("Ham+Chips+Sberry 10$", 1);
     menuMeals.name("Tuna+Salad+Choco 10$", 2);
     menuMeals.name("Student Meal 5$", 3);
-    menuMeals.name("Create your meal 12$", 4);
+    menuMeals.name("Create your meal 7$", 4);
     menuMeals.name("EXIT", 5);
     RectangleShape backMeals;//tlo dla Meals
     backMeals.setSize(Vector2f(600, 800));

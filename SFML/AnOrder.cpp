@@ -90,7 +90,7 @@ void Order::addMeal()
 		{
 			mealIngredients += mealTab[i] + " ";
 		}
-		addToOrder("Meal: " + mealIngredients +" 12$", 12);
+		addToOrder("Meal: " + mealIngredients +" 7$", 7);
 		//czyszczenie elementow posilku
 		mealCreatorCounter = 0;
 		mealIngredients = "";
